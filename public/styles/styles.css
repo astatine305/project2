@@ -64,21 +64,44 @@ textarea {
 .formTitle {
   padding: 10px 0px 10px 0px;
   font-size: 16pt;
+  font-weight: bold;
 }
 
-button {
+#submit {
   background-color: #1d8649;
   padding: 10px 20px 10px 20px;
   border: 1px solid #186337;
   border-radius: 5px;
   font-size: 14pt;
   color: white;
-  margin: 30px;
+  margin: 30px 0px 0px 0px;
 }
 
-button:hover {
+#submit:hover {
   cursor: pointer;
   background-color: #165e34;
+}
+
+/* For Like/Dislike Buttons */
+.input-hidden {
+  position: absolute;
+  left: -9999px;
+}
+
+input[type=radio]:checked + label>img {
+  opacity: 1;
+}
+
+input[type=radio] + label>img {
+  margin: 0px 10px 0px 10px;
+  width: 55px;
+  height: 55px;
+  opacity: .6;
+  transition: 500ms all;
+}
+
+input[type=radio]:checked + label>img {
+  transform: scale(1.25);
 }
 
 .headerImg {
@@ -108,7 +131,7 @@ button:hover {
 }
 
 .pageContent {
-  padding: 30px;
+  padding: 30px 10px 30px 10px;
   margin-left: auto;
   margin-right: auto;
   max-width: 550px;
@@ -217,4 +240,8 @@ footer {
   background-position: bottom;
   background-repeat: repeat-x;
   background-size: contain;
+}
+
+.modal-content {
+  text-align: center;
 }
