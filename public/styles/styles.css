@@ -37,6 +37,50 @@ p {
   font-size: 12pt;
 }
 
+.formContainer {
+  padding: 0px 20px;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  color: #7b7b7b;
+  font-size: 12pt;
+  font-family: 'Open Sans Condensed', sans-serif;
+  border: 1px solid #b8b8b8;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  color: #7b7b7b;
+  font-size: 12pt;
+  font-family: 'Open Sans Condensed', sans-serif;
+  border: 1px solid #b8b8b8;
+}
+
+.formTitle {
+  padding: 10px 0px 10px 0px;
+  font-size: 16pt;
+}
+
+button {
+  background-color: #1d8649;
+  padding: 10px 20px 10px 20px;
+  border: 1px solid #186337;
+  border-radius: 5px;
+  font-size: 14pt;
+  color: white;
+  margin: 30px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #165e34;
+}
+
 .headerImg {
   max-width: 600px;
   width: 80%;
@@ -74,34 +118,6 @@ p {
   text-align: center;
 }
 
-/*.pageContent2 {
-  float: left;
-  z-index: 2;
-  display: flex;
-  flex-direction: row;
-  margin-left: auto;
-  margin-right: auto;
-  justify-content: center;
-  align-items: center;
-  width: 450px;
-  height: 550px;
-}
-
-#leftArrow {
-  opacity: .4;
-  flex-grow: 1;
-}
-
-.spaceDiv {
-  width: 240px;
-  flex-grow: 8;
-}
-
-#rightArrow {
-  opacity: .4;
-  flex-grow: 1;
-}*/
-
 #userImage {
   margin: 10px auto 10px auto;
   max-width: 300px;
@@ -119,7 +135,6 @@ p {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  vertical-align: middle;
 }
 
 .star {

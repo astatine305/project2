@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>VINE - Personal Product Tracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/styles.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+    <script src="/js/index.js"></script>
+</head>
+<body>
+    <header>
+        <div class="headerImg">
+            <a href="index.html"><img id="logoImg" src="../public/assets/images/header_logo-01.svg" alt="Vine Logo"></a>
+        </div>
+    </header>
+    <div class="container">
+
+        <div class="pageContent">
+            <div id="userForm">
+                <form action="action_page.php">
+                    <div class="imgcontainer">
+                      <img src="../public/assets/images/VineLogo_main.svg" width="200px" alt="Logo">
+                    </div>
+                  
+                    <div class="formContainer">
+                      <label for="productName"><p class="formTitle">Product Name</p></label>
+                      <input id="productName" type="text" placeholder="Enter Product Name" name="productName" required>
+ 
+                      <label for="productDesc"><p class="formTitle">Product Description</p></label>
+                      <textarea rows="5" type="text" name="productDesc" placeholder="Add Product Description"></textarea>
+                      
+                        <div class="ratingBar">
+                        <p class="formTitle">Your Rating:</p>
+                            <img class="star" id="star1" src="../public/assets/images/star_white.svg" alt="1 Star Rating">
+                            <img class="star" id="star2" src="../public/assets/images/star_white.svg" alt="2 Star Rating">
+                            <img class="star" id="star3" src="../public/assets/images/star_white.svg" alt="3 Star Rating">
+                            <img class="star" id="star4" src="../public/assets/images/star_white.svg" alt="4 Star Rating">
+                            <img class="star" id="star5" src="../public/assets/images/star_white.svg" alt="5 Star Rating">
+                        </div>
+                  
+                      <br><button type="submit">Add Product</button>
+                    </div>
+
+                  </form>
+            </div>
+            
+        </div>
+
+</div>
+
+    <footer>
+    <div class = "footerImgs">
+        <div id="dislikeBtn"><img src="../public/assets/images/icons-01.svg" width="50px"><br>View Dislikes</div>
+        <div id="cameraBtn"><img src="../public/assets/images/icons-02.svg" width="60%"></div>
+        <div id="likeBtn"><img src="../public/assets/images/icons-03.svg" width="50px"><br>View Likes</div>
+    </div>
+    </footer>
+
+</body>
+</html>
