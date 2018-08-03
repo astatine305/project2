@@ -6,14 +6,14 @@
     <title>VINE - Personal Product Tracker</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--Add Bootstrap here-->
-    <link rel="stylesheet" type="text/css" media="screen" href="styles/styles.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
-    <script src="/js/index.js"></script>
+    <script src="/js/products.js"></script>
 </head>
 <body>
     <header>
         <div class="headerImg">
-            <img id="logoImg" src="../public/assets/images/header_logo-01.svg" alt="Vine Logo">
+            <img id="logoImg" src="assets/images/header_logo-01.svg" alt="Vine Logo">
         </div>
     </header>
 
@@ -21,7 +21,17 @@
     <div class="container">
 
         <div class="pageContent">
-            <div id="mainLogo"><img src="../public/assets/images/VineLogo_main.svg" width="100%" alt="Main Logo"></div>
+            <div id="mainLogo">
+                <img src="assets/images/VineLogo_main.svg" width="100%" alt="Main Logo">
+            </div>
+            
+            <div class="pageLinks">
+                <a href="/addproduct.html">Add A Product</a>
+                <hr>
+                <a href="/addproduct.html">Login</a>
+                <p>or</p>
+                <a href="/addproduct.html">Create a Profile</a>
+            </div>
         </div>
 
     </div>
@@ -29,9 +39,9 @@
 
     <footer>
     <div class = "footerImgs">
-        <div id="dislikeBtn"><img src="../public/assets/images/icons-01.svg" width="50px"><br>View Dislikes</div>
-        <div id="cameraBtn"><img src="../public/assets/images/icons-02.svg" width="60%"></div>
-        <div id="likeBtn"><img src="../public/assets/images/icons-03.svg" width="50px"><br>View Likes</div>
+        <div id="dislikeBtn"><img src="assets/images/icons-01.svg" width="50px"><br>View Dislikes</div>
+        <div id="cameraBtn"><img src="assets/images/icons-02.svg" width="60%"></div>
+        <div id="likeBtn"><img src="assets/images/icons-03.svg" width="50px"><br>View Likes</div>
     </div>
     </footer>
 

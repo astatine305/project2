@@ -1,15 +1,35 @@
-.list-group-item {
-  line-height: 2.5;
+li {
+  padding: 5px;
+  margin: 5px;
+  background: #faebd7;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.create-update-form {
+  padding: 5px;
+  margin: 5px;
+  background: aqua;
+}
+
+.form-group {
+  margin-bottom: 5px;
 }
 
 * {
   box-sizing: border-box;
 }
 
+hr {
+  width: 200px;
+}
+
 body {
   margin: 0px;
   background-image: url(../assets/images/background-01.png);
-  background-repeat: repeat-x;
+  background-repeat: repeat;
   background-size: cover;
   font-family: 'Open Sans Condensed', sans-serif;
   color: #7b7b7b;
@@ -35,6 +55,13 @@ h3 {
 p {
   margin: 1px;
   font-size: 12pt;
+}
+
+.pageLinks a {
+  font-size: 18pt;
+  font-weight: bold;
+  color: #1d8649;
+  text-decoration: none;
 }
 
 .formContainer {
@@ -113,10 +140,10 @@ input[type=radio]:checked + label>img {
 
 #mainLogo {
   width: 275px;
-  height: 390px;
+  height: 250px;
   margin-left: auto;
   margin-right: auto;
-  line-height: 500px;
+  line-height: 360px;
 }
 
 #logoImg {

@@ -1,0 +1,9 @@
+<li>
+	{{product_name}}
+
+	<button class="change-liked" data-id="{{id}}" data-newliked="{{liked}}">
+		{{#if like}}LIKED!{{else}}DISLIKED!{{/if}}
+	</button>
+
+	<button class="delete-product" data-id="{{this.id}}">DELETE!</button>
+</li>

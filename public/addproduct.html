@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>VINE - Personal Product Tracker</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="styles/styles.css" />
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
-    <script src="/js/index.js"></script>
+    <script src="/js/products.js"></script>
 </head>
 <body>
     <header>
         <div class="headerImg">
-            <a href="index.html"><img id="logoImg" src="../public/assets/images/header_logo-01.svg" alt="Vine Logo"></a>
+            <a href="index.html"><img id="logoImg" src="assets/images/header_logo-01.svg" alt="Vine Logo"></a>
         </div>
     </header>
     <div class="container">
@@ -24,7 +24,7 @@
 
                 <form action="/products/create" method="POST">
                     <div class="imgcontainer">
-                      <img src="../public/assets/images/VineLogo_main.svg" width="200px" alt="Logo">
+                      <img src="assets/images/VineLogo_main.svg" width="200px" alt="Logo">
                     </div>
                   
                     <div class="formContainer">
@@ -38,12 +38,12 @@
                     
                         <input type="radio" name="preference" id="like" value="true" class="input-hidden" />
                         <label for="like">
-                            <img src="../public/assets/images/like_green.svg" alt="Like"/>
+                            <img src="assets/images/like_green.svg" alt="Like"/>
                         </label>
 
                         <input type="radio" name="preference" id="dislike" value="false" class="input-hidden" />
                         <label for="dislike">
-                            <img src="../public/assets/images/dislike_red.svg" alt="Disike"/>
+                            <img src="assets/images/dislike_red.svg" alt="Disike"/>
                         </label>
                     
                     <p class="formTitle">Would you like to rate this product?</p>
@@ -68,11 +68,17 @@
 </div>
 
 <footer>
-<div class = "footerImgs">
-    <div id="dislikeBtn"><img src="../public/assets/images/icons-01.svg" width="50px"><br>View Dislikes</div>
-    <div id="cameraBtn"><img src="../public/assets/images/icons-02.svg" width="60%"></div>
-    <div id="likeBtn"><img src="../public/assets/images/icons-03.svg" width="50px"><br>View Likes</div>
-</div>
+  <div class="footerImgs">
+    <div id="dislikeBtn">
+      <img src="assets/images/icons-01.svg" width="50px">
+      <br>View Dislikes</div>
+    <div id="cameraBtn">
+      <img src="assets/images/icons-02.svg" width="60%">
+    </div>
+    <div id="likeBtn">
+      <img src="assets/images/icons-03.svg" width="50px">
+      <br>View Likes</div>
+  </div>
 </footer>
 
 <div id="productModal" class="modal fade" role="dialog">
