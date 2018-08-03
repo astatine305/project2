@@ -1,0 +1,43 @@
+<h1>Products On Your Vino</h1>
+
+<h2>Liked Products</h2>
+
+<ul>
+  {{#each products}}
+    {{#unless liked}}
+      {{> products/product-block like=true}}
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Disliked Products</h2>
+
+<ul>
+  {{#each products}}
+    {{#if liked}}
+      {{> products/product-block like=false}}
+    {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Add a Product</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="name">Product Name:</label>
+    <input type="text" id="name" name="product_name">
+  </div>
+
+  <div class="form-group">
+    <label for="desc">Product Description:</label>
+    <textarea rows="5" type="text" id="desc" name="product_desc">
+    </textarea>
+
+  <div class="form-group">
+    <label for="liked">Please Select Liked or Disliked</label><br>
+    <input type="radio" name="liked" value="1" checked> Liked<br>
+    <input type="radio" name="liked" value="0"> Disliked
+  </div>
+
+  <button type="submit">Add Product</button>
+</form>

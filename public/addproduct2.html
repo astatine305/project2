@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>VINE - Personal Product Tracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+    <script src="/js/products.js"></script>
+</head>
+<body>
+    <header>
+        <div class="headerImg">
+            <a href="index.html"><img id="logoImg" src="assets/images/header_logo-01.svg" alt="Vine Logo"></a>
+        </div>
+    </header>
+    <div class="container">
+
+        <div class="pageContent">
+
+            <div id="userForm">
+
+              <h2>Add a Product</h2>
+              <form class="create-form">
+              
+                <div class="form-group">
+                  <label for="name">Product Name:</label>
+                  <input type="text" id="name" name="product_name">
+                </div>
+              
+                <div class="form-group">
+                  <label for="desc">Product Description:</label>
+                  <textarea rows="5" type="text" id="desc" name="product_desc">
+                  </textarea>
+              
+                <div class="form-group">
+                  <label for="liked">Please Select Liked or Disliked</label><br>
+                  <input type="radio" name="liked" value="1" checked> Liked<br>
+                  <input type="radio" name="liked" value="0"> Disliked
+                </div>
+              
+                <button type="submit">Add Product</button>
+              </form>
+              
+            </div>
+            
+        </div>
+
+</div>
+
+<footer>
+  <div class="footerImgs">
+    <div id="dislikeBtn">
+      <img src="assets/images/icons-01.svg" width="50px">
+      <br>View Dislikes</div>
+    <div id="cameraBtn">
+      <img src="assets/images/icons-02.svg" width="60%">
+    </div>
+    <div id="likeBtn">
+      <img src="assets/images/icons-03.svg" width="50px">
+      <br>View Likes</div>
+  </div>
+</footer>
+
+<div id="productModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+    
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">×</button>
+              <h2 class="modal-title"><strong>Your New Product has been added!</strong></h2>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+    
+        </div>
+</div>
+
+    <script type="text/javascript">
+        // Capture the form inputs
+        $("#submit").on("click", function(event) {
+          event.preventDefault();
+      
+          // Form validation
+          function validateForm() {
+            var isValid = true;
+            $(".form-control").each(function() {
+              if ($(this).val() === "") {
+                isValid = false;
+              }
+            });
+      
+            $(".select").each(function() {
+      
+              if ($(this).val() === "") {
+                isValid = false;
+              }
+            });
+            return isValid;
+          }
+      
+          // If all required fields are filled
+          if (validateForm()) {
+            // Create an object for the user"s data
+            var userData = {
+              name: $("#name").val().trim(),
+              desription: $("#description").val().trim(),
+              preference: $("#like").val(),
+              preference: $("#dislike").val(),
+              rating: $("#rating").val()
+            };
+      
+            var currentURL = window.location.origin;
+      
+            // AJAX post the data to the product API.
+            $.post(currentURL + "/api/product", userData, function(data) {
+      
+              // Show the modal to confirm
+              $("#productModal").modal("toggle");
+            });
+          } else {
+            alert("Please complete all required forms");
+          }
+        });
+      </script>
+</body>
+</html>

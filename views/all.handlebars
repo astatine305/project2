@@ -1,4 +1,4 @@
- <header>
+<header>
         <div class="headerImg">
             <img id="logoImg" src="assets/images/header_logo-01.svg" alt="Vine Logo">
         </div>
@@ -8,17 +8,19 @@
     <div class="container">
 
         <div class="pageContent">
-            <div id="mainLogo">
-                <img src="assets/images/VineLogo_main.svg" width="100%" alt="Main Logo">
-            </div>
+            <h1>Products On Your Vino</h1>
             
-            <div class="pageLinks">
-                <a href="/addproduct.html">Add A Product</a>
-                <hr>
-                <a href="/addproduct.html">Login</a>
-                <p>or</p>
-                <a href="/addproduct.html">Create a Profile</a>
-            </div>
+            <h2>Liked Products</h2>
+            
+            <ul>
+                {{#each products}} {{#unless liked}} {{> products/product-block like=true}} {{/unless}} {{/each}}
+            </ul>
+            
+            <h2>Disliked Products</h2>
+            
+            <ul>
+                {{#each products}} {{#if liked}} {{> products/product-block like=false}} {{/if}} {{/each}}
+            </ul>
         </div>
 
     </div>

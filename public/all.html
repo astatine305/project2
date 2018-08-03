@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>VINE - Personal Product Tracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Add Bootstrap here-->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+    <script src="/js/products.js"></script>
+</head>
+<body>
+    <header>
+        <div class="headerImg">
+            <img id="logoImg" src="assets/images/header_logo-01.svg" alt="Vine Logo">
+        </div>
+    </header>
+
+<!--    EDIT PAGE CONTENT BELOW    -->    
+    <div class="container">
+
+        <div class="pageContent">
+            <h1>Products On Your Vino</h1>
+            
+            <h2>Liked Products</h2>
+            
+            <ul>
+                {{#each products}} {{#unless liked}} {{> products/product-block like=true}} {{/unless}} {{/each}}
+            </ul>
+            
+            <h2>Disliked Products</h2>
+            
+            <ul>
+                {{#each products}} {{#if liked}} {{> products/product-block like=false}} {{/if}} {{/each}}
+            </ul>
+        </div>
+
+    </div>
+<!--    EDIT PAGE CONTENT ABOVE    -->
+
+    <footer>
+    <div class = "footerImgs">
+        <div id="dislikeBtn"><img src="assets/images/icons-01.svg" width="50px"><br>View Dislikes</div>
+        <div id="cameraBtn"><img src="assets/images/icons-02.svg" width="60%"></div>
+        <div id="likeBtn"><img src="assets/images/icons-03.svg" width="50px"><br>View Likes</div>
+    </div>
+    </footer>
+
+</body>
+</html>

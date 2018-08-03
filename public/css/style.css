@@ -270,5 +270,6 @@ footer {
 }
 
 .modal-content {
+  display: none;
   text-align: center;
 }
