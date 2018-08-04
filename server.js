@@ -21,7 +21,7 @@ app.engine(
   })
 );
 app.set("view engine", "handlebars");
-
+console.log(app);
 // Routes
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
