@@ -2,6 +2,8 @@ require("dotenv").config();
 var express = require("express");
 var bodyParser = require("body-parser");
 var exphbs = require("express-handlebars");
+var moment = require("moment");
+moment().format();
 
 //var db = require("./models");
 
@@ -26,6 +28,8 @@ app.set("view engine", "handlebars");
 
 // Routes
 var routes = require("./controllers/productsController.js");
+// require("./routes/apiRoutes")(app);
+// require("./routes/htmlRoutes")(app);
 
 app.use(routes);
 

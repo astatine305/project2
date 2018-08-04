@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
     <script src="/js/products.js"></script>
+    <script src="moment.js"></script>
 </head>
 <body>
     <header>
@@ -21,17 +22,14 @@
     <div class="container">
 
         <div class="pageContent">
-            <div id="mainLogo">
-                <img src="assets/images/VineLogo_main.svg" width="100%" alt="Main Logo">
-            </div>
+            <h1>Products On Your Vino</h1>
             
-            <div class="pageLinks">
-                <a href="/addproduct.html">Add A Product</a>
-                <hr>
-                <a href="/addproduct.html">Login</a>
-                <p>or</p>
-                <a href="/addproduct.html">Create a Profile</a>
-            </div>
+            <h2>Liked Products</h2>
+            
+            <ul>
+                {{#each products}} {{#unless liked}} {{> products/product-block like=true}} {{/unless}} {{/each}}
+            </ul>
+        
         </div>
 
     </div>

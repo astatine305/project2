@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>VINE - Personal Product Tracker</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
     <script src="/js/products.js"></script>
@@ -62,6 +62,32 @@
 
                 </form>
             </div>
+
+            <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
             
         </div>
 
@@ -70,33 +96,16 @@
 <footer>
   <div class="footerImgs">
     <div id="dislikeBtn">
-      <img src="assets/images/icons-01.svg" width="50px">
+      <a href="disliked.html"><img src="assets/images/icons-01.svg" width="50px"></a>
       <br>View Dislikes</div>
     <div id="cameraBtn">
-      <img src="assets/images/icons-02.svg" width="60%">
+      <a href="addproduct.html"><img src="assets/images/icons-02.svg" width="60%"></a>
     </div>
     <div id="likeBtn">
-      <img src="assets/images/icons-03.svg" width="50px">
+      <a href="liked.html"><img src="assets/images/icons-03.svg" width="50px"></a>
       <br>View Likes</div>
   </div>
 </footer>
-
-<div id="productModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-    
-          <!-- Modal content-->
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">×</button>
-              <h2 class="modal-title"><strong>Your New Product has been added!</strong></h2>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-    
-        </div>
-</div>
 
     <script type="text/javascript">
         // Capture the form inputs
@@ -135,10 +144,7 @@
             var currentURL = window.location.origin;
       
             // AJAX post the data to the product API.
-            $.post(currentURL + "/api/product", userData, function(data) {
-      
-              // Show the modal to confirm
-              $("#productModal").modal("toggle");
+            $.post(currentURL + "/api/product", userData, function(data) {     
             });
           } else {
             alert("Please complete all required forms");
