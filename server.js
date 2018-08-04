@@ -1,48 +1,43 @@
-require("dotenv").config();
-var express = require("express");
-var bodyParser = require("body-parser");
-var exphbs = require("express-handlebars");
+var express=require("express");
+var bodyParser=require('body-parser');
 
-var db = require("./models");
-
+var PORT = process.env.PORT || 8080; 
+var connection = require('./config/config');
 var app = express();
-var PORT = process.env.PORT || 3000;
-
-// Middleware
-app.use(bodyParser.urlencoded({ extended: false }));
+ 
+var authenticateController=require('./controllers/authenticate');
+var registerController=require('./controllers/register');
+var productController =require('./controllers/product');
+ 
+app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
-app.use(express.static("public"));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.get('/', function (req, res) {  
+   res.sendFile( __dirname + "/" + "register.html" );  
+})  
+ 
+app.get('/login', function (req, res) {  
+   res.sendFile( __dirname + "/" + "login.html" );  
+})  
 
-// Handlebars
-app.engine(
-  "handlebars",
-  exphbs({
-    defaultLayout: "main"
-  })
-);
-app.set("view engine", "handlebars");
+app.get('/product', function (req, res) {  
+    res.sendFile( __dirname + "/" + "products.html" );  
+ })  
+ 
 
-// Routes
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+/* route to handle product update */
 
-var syncOptions = { force: false };
 
-// If running a test, set syncOptions.force to true
-// clearing the `testdb`
-if (process.env.NODE_ENV === "test") {
-  syncOptions.force = true;
-}
-
-// Starting the server, syncing our models ------------------------------------/
-db.sequelize.sync(syncOptions).then(function() {
-  app.listen(PORT, function() {
-    console.log(
-      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
-      PORT,
-      PORT
-    );
+/* route to handle login and registration */
+app.post('/api/register',registerController.register);
+app.post('/api/authenticate',authenticateController.authenticate);
+app.post('/api/proudct',productController.product);
+ 
+// console.log(authenticateController);
+app.post('/controllers/register', registerController.register);
+app.post('/controllers/authenticate', authenticateController.authenticate);
+app.post('/controllers/product', productController.product);
+// app.listen(8000);
+app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
   });
-});
-
-module.exports = app;
