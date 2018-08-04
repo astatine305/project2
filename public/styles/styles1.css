@@ -1,12 +1,12 @@
-/* begin fletcher's additions 8/4/2018 */
-#login-button,#login-submit-button,#signup-submit-button {
+#login-button {
   background-color: #1d8649;
 }
 
-#signup-button,#login-cancel-button,#signup-cancel-button {
+#sign-up-button {
   background-color: #165e34;
 }
-/* end fletcher's additions 8/4/2018 */
+
+/* fletcher's additions above */
 
 
 .list-group-item {
