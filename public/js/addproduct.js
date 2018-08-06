@@ -2,6 +2,8 @@ $(document).ready(function() {
   // Getting jQuery references to the post body, title, form, and author select
   var descInput = $("#description");
   var nameInput = $("#name");
+  var prefInput = $("preference");
+  var ratingInput = $("#rating");
   var addProductForm = $("#newProduct");
   var userSelect = $("#user");
   // Adding an event listener for when the form is submitted
@@ -10,7 +12,7 @@ $(document).ready(function() {
   var url = window.location.search;
   var productId;
   var userId;
-  // Sets a default for whether or not we're updating a post to be false initially
+  // Sets a default for whether or not we're updating a product to be false initially
   var updating = false;
 
   // If we have this section in our url, we pull out the product id from the url
@@ -24,7 +26,7 @@ $(document).ready(function() {
     userId = url.split("=")[1];
   }
 
-  // Getting the authors, and their posts
+  // Getting the users, and their products
   getUsers();
 
   // A function for handling what happens when the form to create a new product is submitted
@@ -42,6 +44,10 @@ $(document).ready(function() {
       product_desc: descInput
         .val()
         .trim(),
+      preference: prefInput
+        .val(),
+      rating: ratingInput
+        .val(),
       UserId: userSelect.val()
     };
 
@@ -81,7 +87,9 @@ $(document).ready(function() {
         console.log(data.UserId || data.id);
         // If this product exists, prefill our addProduct forms with its data
         nameInput.val(data.product_name);
-        descriptionsInput.val(data.product_desc);
+        descInput.val(data.product_desc);
+        prefInput.val(data.preference);
+        ratingInput.val(data.rating);
         userId = data.UserId || data.id;
         // If we have a post with this id, set a flag for us to know to update the post
         // when we hit submit
@@ -120,7 +128,7 @@ $(document).ready(function() {
     return listOption;
   }
 
-  // Update a given post, bring user to the blog page when done
+  // Update a given post, bring user to the allproducts page when done
   function updateProduct(product) {
     $.ajax({
       method: "PUT",
