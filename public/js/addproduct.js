@@ -48,7 +48,8 @@ $(document).ready(function() {
         .val(),
       rating: ratingInput
         .val(),
-      UserId: userSelect.val()
+      UserId: userSelect
+        .val()
     };
 
     // If we're updating a post run updateProduct to update a post

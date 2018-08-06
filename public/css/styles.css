@@ -17,7 +17,7 @@ body {
 
 .spaceDiv {
   width: 100%;
-  margin: 10px 0px 10px 0px;
+  margin: 10px 0px 0px 0px;
 }
 
 header {
@@ -28,6 +28,16 @@ header {
   left: 0;
   width: 100%;
   background-color: #1d8649;
+}
+
+.pageTitle {
+  font-size: 24pt;
+  color: #1d8649;
+  margin: 0px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase; 
+  margin: 0px 0px 5px 0px;
 }
 
 h1 {
@@ -73,6 +83,10 @@ p {
   margin-bottom: 20px;
 }
 
+.form-group2 {
+  margin: 0px;
+}
+
 input {
   display: block;
   width: 100%;
@@ -94,7 +108,7 @@ textarea {
 }
 
 .formTitle {
-  padding: 10px 0px 10px 0px;
+  padding: 10px 0px 0px 0px;
   font-size: 16pt;
   font-weight: bold;
 }
@@ -154,7 +168,8 @@ textarea {
 }
 
 .modal-title {
-  display: block;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
   margin-left: auto;
   margin-right: auto;
 }

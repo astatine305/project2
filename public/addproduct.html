@@ -4,12 +4,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>VINO | Personal Product Tracker</title>
-	<!-- Latest compiled and minified CSS & JS -->
-	<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="css/styles.css" media="screen" title="no title">
-	<script src="https://code.jquery.com/jquery.js"></script>
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" media="screen" href="css/styles.css" />
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:700|Open+Sans|Open+Sans+Condensed:300" rel="stylesheet">
 </head>
 
 <body>
@@ -20,52 +17,72 @@
     </div>
 	</header>
 		
-	<div class="container hidden">
+	<div class="container">
 			<div class="pageContent">
-				<h1>ADD A PRODUCT</h1>
+				<div class="pageTitle">ADD A PRODUCT</div>
+				
 				<form id="newProduct">
-					<div class="form-group">
+
+					<div class="form-group2">
 						<label for="name"><p class="formTitle">Product Name:</p></label>
 						<input placeholder="Add product name here" type="text" class="form-control" id="name">
-						<br />
 						<label for="description"><p class="formTitle">Product Description:</p></label>
 						<textarea placeholder="Please add a brief product description" class="form-control" rows="2" id="description"></textarea>
-						<div class="form-group">
-							<label for="category">Select User:</label>
-							<select class="form-control" id="user">
-							</select>
-							
-							<div class="form-group">
-								<p class="formTitle">Add to Likes or Dislikes?</p>
-								<input type="radio" name="preference" id="like" value="1" class="input-hidden" />
-								<label for="like">
-									<img src="assets/images/like_green.svg" alt="Like" />
-								</label>
-							
-								<input type="radio" name="preference" id="dislike" value="0" class="input-hidden" />
-								<label for="dislike">
-									<img src="assets/images/dislike_red.svg" alt="Disike" />
-								</label>
-							</div>
-
-							<div class="form-group">
-								<p class="formTitle">Would you like to rate this product?</p>
-								<select class="select" id="rating" name="rating">
-									<option value="">Please Select</option>
-									<option value="1">1 Star (Not good)</option>
-									<option value="2">2 Stars</option>
-									<option value="3">3 Stars</option>
-									<option value="4">4 Stars</option>
-									<option value="5">5 Stars (Excellent)</option>
-								</select>
-							</div>
+					
+						<label for="category" class="formTitle">Select User:</label>
+						<select class="form-control" id="user">
+						</select>
+					
+						<p class="formTitle">Add to Likes or Dislikes?</p>
+						<div class="spaceDiv">
+							<input type="radio" name="preference" id="like" value="1" class="input-hidden" />
+							<label for="like">
+								<img src="assets/images/like_green.svg" alt="Like" />
+							</label>
+								
+							<input type="radio" name="preference" id="dislike" value="0" class="input-hidden" />
+							<label for="dislike">
+								<img src="assets/images/dislike_red.svg" alt="Disike" />
+							</label>
 						</div>
-						<br />
-						<button type="submit" class="btn">Submit</button>
+					
+						<label for="rating"><p class="formTitle">Would you like to rate this product?</p></label><br>
+						<select class="select" id="rating" name="rating">
+							<option value="">Please Select</option>
+							<option value="1">1 Star (Not good)</option>
+							<option value="2">2 Stars</option>
+							<option value="3">3 Stars</option>
+							<option value="4">4 Stars</option>
+							<option value="5">5 Stars (Excellent)</option>
+						</select>
+					
+						<br>
+						<div class="spaceDiv">		
+						<button type="submit" class="btn" id="confirm-button"  data-toggle="modal" data-target="#confirmModal">Add Product</button>
+						</div>
 					</div>
+
 				</form>
+
+	<!-- Product Added Modal -->
+	<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title" id="confirmModalLabel">Product Added!</h1>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<p>Your product has been added to Vino.</p>
+				</div>
 			</div>
+		</div>
 	</div>
+
+</div>
+</div>
 
 	<footer>
 			<div class="footerImgs">
@@ -80,6 +97,10 @@
 					<br>View Likes</div>
 			</div>
 	</footer>
+    <!-- Bootstrap Javascript CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 	<!-- Custom Script -->
 	<script src="js/addproduct.js" type="text/javascript"></script>
