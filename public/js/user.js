@@ -6,14 +6,14 @@ $(document).ready(function() {
   var userContainer = $(".user-container");
   // Adding event listeners to the form to create a new object, and the button to delete
   // a user
-  $(document).on("submit", "#user-form", handleUserFormSubmit);
+  $(document).on("submit", "profile-form", handleProfileFormSubmit);
   $(document).on("click", ".delete-user", handleDeleteButtonPress);
 
   // Getting the initial list of Users
   getUsers();
 
   // A function to handle what happens when the form is submitted to create a new profile
-  function handleUserFormSubmit(event) {
+  function handleProfileFormSubmit(event) {
     event.preventDefault();
     // Don't do anything if the email field hasn't been filled out
     if (!emailInput.val().trim().trim()) {
@@ -26,7 +26,7 @@ $(document).ready(function() {
         .trim(),
       email: emailInput
         .val()
-        .trim() 
+        .trim()
     });
   }
 
@@ -34,7 +34,7 @@ $(document).ready(function() {
   function addUser(userData) {
     $.post("/api/users", userData)
     window.location.href = "/addproduct";
-    alert("Hello " + userData.name + "! Please add a new product.");
+    //alert("Hello " + userData.name + "! Please add a new product.");
   }
 
   // Function for creating a new list row for userss
