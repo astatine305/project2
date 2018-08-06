@@ -5,8 +5,8 @@ $(document).ready(function() {
   var productContainer = $(".product-container");
   var productCategorySelect = $("#category");
   // Click events for the edit and delete buttons
-  $(document).on("click", "button.delete", handleProductDelete);
-  $(document).on("click", "button.edit", handleProductEdit);
+  $(document).on("click", "button.btn3", handleProductDelete);
+  $(document).on("click", "button.btn4", handleProductEdit);
   // Variable to hold our products
   var products;
 
@@ -60,7 +60,7 @@ $(document).ready(function() {
     for (var i = 0; i < products.length; i++) {
       productsToAdd.push(createNewRow(products[i]));
     }
-    productContainer.append(productsToAdd);
+    productContainer.prepend(productsToAdd);
   }
 
   // This function constructs a products HTML
@@ -128,11 +128,11 @@ $(document).ready(function() {
       partial = " for User #" + id;
     }
     productContainer.empty();
-    var messageH1 = $("<h1>");
-    messageH1.css({ "text-align": "center", "margin-top": "50px" });
-    messageH1.html("No products added yet" + partial + ", click <a href='/addproduct" + query +
+    var messageH2 = $("<h2>");
+    messageH2.css({ "text-align": "center", "margin-top": "50px" });
+    messageH2.html("No products have been added yet" + partial + ".<br>" + "Click <a href='/addproduct" + query +
     "'>here</a> to add a product.");
-    productContainer.append(messageH1);
+    productContainer.append(messageH2);
   }
 
 });
