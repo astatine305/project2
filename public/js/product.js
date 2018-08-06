@@ -87,7 +87,7 @@ $(document).ready(function() {
     newProductName.text(product.product_name + " ");
     newProductDesc.text("Description: " + product.product_desc);
     newProductPref.text("Preference: " + product.preference);
-    newProductRating.text("Rating: " + product.rating);
+    newProductRating.text("Rating: " + product.rating + " stars");
     newProductDate.text("Date added: " + formattedDate);
     newProductPanelBody.append(newProductDate);
     newProductPanelBody.append(deleteBtn);
