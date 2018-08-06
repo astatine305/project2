@@ -68,35 +68,34 @@ $(document).ready(function() {
     var formattedDate = new Date(product.createdAt);
     formattedDate = moment(formattedDate).format("MMMM Do YYYY");
     var newProductPanel = $("<div>");
-    newProductPanel.addClass("panel panel-default");
+    newProductPanel.addClass("product-panel");
     var newProductPanelHeading = $("<div>");
-    newProductPanelHeading.addClass("panel-heading");
+    newProductPanelHeading.addClass("product-heading");
     var deleteBtn = $("<button>");
     deleteBtn.text("delete");
     deleteBtn.addClass("btn3");
     var editBtn = $("<button>");
     editBtn.text("edit");
     editBtn.addClass("btn4");
-    var newProductName = $("<h2>");
-    var newProductDate = $("<small>");
-    var newProductPref = $("<small>");
-    var newProductRating = $("<small>");
-
+    var newProductName = $("<h1>");
+    var newProductDate = $("<p>");
+    var newProductPref = $("<p>");
+    var newProductRating = $("<p>");
     var newProductPanelBody = $("<div>");
-    newProductPanelBody.addClass("panel-body");
+    newProductPanelBody.addClass("product-body");
     var newProductDesc = $("<p>");
     newProductName.text(product.product_name + " ");
-    newProductDesc.text(product.product_desc);
-    newProductPref.text(product.preference);
-    newProductRating.text(product.rating);
-    newProductDate.text(formattedDate);
-    newProductName.append(newProductDate);
-    newProductPanelHeading.append(deleteBtn);
-    newProductPanelHeading.append(editBtn);
+    newProductDesc.text("Description: " + product.product_desc);
+    newProductPref.text("Preference: " + product.preference);
+    newProductRating.text("Rating: " + product.rating);
+    newProductDate.text("Date added: " + formattedDate);
+    newProductPanelBody.append(newProductDate);
+    newProductPanelBody.append(deleteBtn);
+    newProductPanelBody.append(editBtn);
     newProductPanelHeading.append(newProductName);
-    newProductPanelBody.append(newProductDesc);
-    newProductPanelBody.append(newProductPref);
-    newProductPanelBody.append(newProductRating);
+    newProductPanelHeading.append(newProductDesc);
+    newProductPanelBody.prepend(newProductPref);
+    newProductPanelBody.prepend(newProductRating);
     newProductPanel.append(newProductPanelHeading);
     newProductPanel.append(newProductPanelBody);
     newProductPanel.data("product", product);
@@ -129,11 +128,11 @@ $(document).ready(function() {
       partial = " for User #" + id;
     }
     productContainer.empty();
-    var messageH2 = $("<h2>");
-    messageH2.css({ "text-align": "center", "margin-top": "50px" });
-    messageH2.html("No products added yet" + partial + ", click <a href='/addproduct" + query +
+    var messageH1 = $("<h1>");
+    messageH1.css({ "text-align": "center", "margin-top": "50px" });
+    messageH1.html("No products added yet" + partial + ", click <a href='/addproduct" + query +
     "'>here</a> to add a product.");
-    productContainer.append(messageH2);
+    productContainer.append(messageH1);
   }
 
 });
