@@ -91,7 +91,7 @@ $(document).ready(function() {
         prefInput.val(data.preference);
         ratingInput.val(data.rating);
         userId = data.UserId || data.id;
-        // If we have a post with this id, set a flag for us to know to update the post
+        // If we have a product with this id, set a flag for us to know to update the post
         // when we hit submit
         updating = true;
       }

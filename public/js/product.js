@@ -42,6 +42,16 @@ $(document).ready(function() {
     });
   }
 
+  // InitializeRows handles appending all of our constructed product HTML inside productContainer
+  function initializeRows() {
+    productContainer.empty();
+    var productsToAdd = [];
+    for (var i = 0; i < products.length; i++) {
+      productsToAdd.push(createNewRow(products[i]));
+    }
+    productContainer.prepend(productsToAdd);
+  }
+
   // This function does an API call to delete products
   function deleteProduct(id) {
     $.ajax({
@@ -51,16 +61,6 @@ $(document).ready(function() {
       .then(function() {
         getProducts(productCategorySelect.val());
       });
-  }
-
-  // InitializeRows handles appending all of our constructed product HTML inside productContainer
-  function initializeRows() {
-    productContainer.empty();
-    var productsToAdd = [];
-    for (var i = 0; i < products.length; i++) {
-      productsToAdd.push(createNewRow(products[i]));
-    }
-    productContainer.prepend(productsToAdd);
   }
 
   // This function constructs a products HTML

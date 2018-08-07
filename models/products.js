@@ -13,7 +13,8 @@ module.exports = function(sequelize, DataTypes) {
       len: [1]
     },
     preference: {
-      type: DataTypes.BOOLEAN,
+      type: DataTypes.INTEGER,
+      default: 1,
     },
     rating: {
       type: DataTypes.INTEGER,
