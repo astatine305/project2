@@ -1,29 +1,23 @@
-/* begin fletcher's additions 8/4/2018 */
-#login-button,#login-submit-button,#signup-submit-button {
-  background-color: #1d8649;
-}
-
-#signup-button,#login-cancel-button,#signup-cancel-button {
-  background-color: #165e34;
-}
-/* end fletcher's additions 8/4/2018 */
-
-
-.list-group-item {
-  line-height: 2.5;
-}
-
 * {
   box-sizing: border-box;
+}
+
+hr {
+  width: 300px;
 }
 
 body {
   margin: 0px;
   background-image: url(../assets/images/background-01.png);
-  background-repeat: repeat-x;
+  background-repeat: repeat;
   background-size: cover;
   font-family: 'Open Sans Condensed', sans-serif;
   color: #7b7b7b;
+}
+
+.spaceDiv {
+  width: 100%;
+  margin: 10px 0px 0px 0px;
 }
 
 header {
@@ -34,6 +28,32 @@ header {
   left: 0;
   width: 100%;
   background-color: #1d8649;
+}
+
+.pageTitle {
+  font-size: 24pt;
+  color: #1d8649;
+  margin: 0px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase; 
+  margin: 0px 0px 5px 0px;
+}
+
+h1 {
+  font-size: 24pt;
+  color: #1d8649;
+  margin: 0px;
+  font-family: 'Open Sans Condensed', sans-serif;
+  text-transform: uppercase; 
+  margin: 0px 0px 5px 0px;
+}
+
+h2 {
+  margin: 6px 0px 6px 0px;
+  font-size: 14pt; 
+  letter-spacing: .5px;
+  line-height: 170%;
 }
 
 h3 {
@@ -48,8 +68,23 @@ p {
   font-size: 12pt;
 }
 
+.pageLinks a {
+  font-size: 18pt;
+  font-weight: bold;
+  color: #1d8649;
+  text-decoration: none;
+}
+
 .formContainer {
   padding: 0px 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group2 {
+  margin: 0px;
 }
 
 input {
@@ -73,23 +108,103 @@ textarea {
 }
 
 .formTitle {
-  padding: 10px 0px 10px 0px;
+  padding: 10px 0px 0px 0px;
   font-size: 16pt;
+  font-weight: bold;
 }
 
-button {
+.btn {
   background-color: #1d8649;
-  padding: 10px 20px 10px 20px;
+  width: 30%;
+  padding: 5px;
   border: 1px solid #186337;
   border-radius: 5px;
   font-size: 14pt;
   color: white;
-  margin: 30px;
+  margin: 0px 10px 15px 10px;
 }
 
-button:hover {
+.btn:hover {
   cursor: pointer;
   background-color: #165e34;
+}
+
+.product-panel {
+  margin-bottom: 30px;
+}
+
+.btn4 {
+  background-color: #1d8649;
+  width: 20%;
+  max-width: 50px;
+  padding: 2px;
+  border: 1px solid #186337;
+  border-radius: 5px;
+  font-size: 12pt;
+  color: white;
+  margin: 10px 10px 0px 10px;
+}
+
+.btn4:hover {
+  cursor: pointer;
+  background-color: #165e34;
+}
+
+.btn3 {
+  background-color: rgb(196, 0, 0);
+  width: 20%;
+  max-width: 50px;
+  padding: 2px;
+  border: 1px solid rgb(136, 0, 0);
+  border-radius: 5px;
+  font-size: 12pt;
+  color: white;
+  margin: 10px 10px 0px 10px;
+}
+
+.btn3:hover {
+  cursor: pointer;
+  background-color: rgb(136, 0, 0);
+}
+
+.modal-title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.modal-body {
+  text-align: center;
+}
+
+.close {
+  margin: 0;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+
+/* For Like/Dislike Buttons */
+.input-hidden {
+  position: absolute;
+  left: -9999px;
+}
+
+input[type=radio]:checked + label>img {
+  opacity: 1;
+}
+
+input[type=radio] + label>img {
+  margin: 0px 10px 0px 10px;
+  width: 55px;
+  height: 55px;
+  opacity: .6;
+  transition: 500ms all;
+}
+
+input[type=radio]:checked + label>img {
+  transform: scale(1.25);
 }
 
 .headerImg {
@@ -101,10 +216,7 @@ button:hover {
 
 #mainLogo {
   width: 275px;
-  height: 390px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 500px;
+  margin: 20px auto 20px auto;
 }
 
 #logoImg {
@@ -119,7 +231,7 @@ button:hover {
 }
 
 .pageContent {
-  padding: 30px;
+  padding: 30px 10px 30px 10px;
   margin-left: auto;
   margin-right: auto;
   max-width: 550px;
@@ -190,12 +302,23 @@ button:hover {
   opacity: 1;
 }
 
+#plusText {
+  width: 100%;
+  margin: auto;
+  top: 15%;
+  left: .5%;
+  position: absolute;
+  z-index: 3;
+  font-size: 12pt;
+  color: white;
+}
+
 #cameraBtn {
   width: 120px;
   height: 120px;
   margin: 0px 30px 0px 30px;
   border-radius: 60px;
-  line-height: 135px;
+  line-height: 97px;
   text-align: center;
   background-color: white;
   border: 10px solid #1d8649;
