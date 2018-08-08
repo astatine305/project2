@@ -30,7 +30,7 @@ module.exports = function(app) {
   });
 
   // GET route for getting all of the disliked products ??????
-  app.get("/api/products", function(req, res) {
+  app.get("/api/products/disliked", function(req, res) {
     var query = {};
     if (req.query.user_id) {
       query.UserId = req.query.user_id;
@@ -39,7 +39,7 @@ module.exports = function(app) {
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, preference with a value of '2'
     db.Product.findAll({
-      preference: '2'
+      preference: 'dislike'
     })
     .then(function(dislikedProducts) {
       res.json(dislikedProducts);
@@ -47,16 +47,16 @@ module.exports = function(app) {
   });
 
   // GET route for getting all of the liked products ??????
-  app.get("/api/products", function(req, res) {
+  app.get("/api/products/liked", function(req, res) {
     var query = {};
     if (req.query.user_id) {
       query.UserId = req.query.user_id;
     }
     // Here we add an "include" property to our options in our findAll query
     // We set the value to an array of the models we want to include in a left outer join
-    // In this case, preference with a value of '2'
+    // In this case, preference with a value of 'like'
     db.Product.findAll({
-      preference: 'null'
+      preference: 'like'
     })
     .then(function(likedProducts) {
       res.json(likedProducts);

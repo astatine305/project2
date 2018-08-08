@@ -47,12 +47,12 @@ $(document).ready(function() {
   }
 
   //Trying to write the function for sorting the liked and disliked products
-  /*function getProducts(disliked) {
-    preference = disliked || "2";
+  /*function getProducts(liked) {
+    preference = like;
     if (preference) {
-      preference.val === "2";
+      preference.val === "like";
     }
-    $.get("/api/products" + preference, function(data) {
+    $.get("/api/products/liked, function(data) {
       console.log("Products", data);
       products = data;
       if (!products || !products.length) {
@@ -64,17 +64,6 @@ $(document).ready(function() {
     });
   }*/
 
-
-  // This function does an API call to delete products
-  function deleteProduct(id) {
-    $.ajax({
-      method: "DELETE",
-      url: "/api/products/" + id
-    })
-      .then(function() {
-        getProducts(productCategorySelect.val());
-      });
-  }
 
   // InitializeRows handles appending all of our constructed product HTML inside productContainer
   function initializeRows() {
@@ -148,6 +137,17 @@ $(document).ready(function() {
     newProductPanel.append(newProductPanelBody3);
     newProductPanel.data("product", product);
     return newProductPanel;
+  }
+
+  // This function does an API call to delete products
+  function deleteProduct(id) {
+    $.ajax({
+      method: "DELETE",
+      url: "/api/products/" + id
+    })
+      .then(function() {
+        getProducts(productCategorySelect.val());
+      });
   }
 
   // This function figures out which product we want to delete and then calls deleteProduct
