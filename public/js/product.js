@@ -46,26 +46,7 @@ $(document).ready(function() {
     });
   }
 
-  //Trying to write the function for sorting the liked and disliked products
-  /*function getProducts(liked) {
-    preference = like;
-    if (preference) {
-      preference.val === "like";
-    }
-    $.get("/api/products/liked, function(data) {
-      console.log("Products", data);
-      products = data;
-      if (!products || !products.length) {
-        displayEmpty(user);
-      }
-      else {
-        dislikedRows();
-      }
-    });
-  }*/
-
-
-  // InitializeRows handles appending all of our constructed product HTML inside productContainer
+// InitializeRows handles appending all of our constructed product HTML inside productContainer
   function initializeRows() {
     productContainer.empty();
     var productsToAdd = [];
@@ -75,27 +56,7 @@ $(document).ready(function() {
     productContainer.prepend(productsToAdd);
   }
 
-  // InitializeRows appends all of our constructed product HTML inside likedContainer - NEED TO FIX
-  function likedRows() {
-    likedContainer.empty();
-    var productsToAdd = [];
-    for (var i = 0; i < products.length; i++) {
-      productsToAdd.push(createNewRow(products[i]));
-    }
-    likedContainer.prepend(productsToAdd);
-  }
-
-  // InitializeRows appends all of our constructed product HTML inside dislikedContainer - NEED TO FIX
-  function dislikedRows() {
-    dislikedContainer.empty();
-    var productsToAdd = [];
-    for (var i = 0; i < products.length; i++) {
-      productsToAdd.push(createNewRow(products[i]));
-    }
-    dislikedContainer.prepend(productsToAdd);
-  }
-
-  // This function constructs a products HTML
+// This function constructs a products HTML
   function createNewRow(product) {
     var formattedDate = new Date(product.createdAt);
     formattedDate = moment(formattedDate).format("M/D/YYYY");

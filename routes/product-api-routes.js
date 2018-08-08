@@ -39,10 +39,11 @@ module.exports = function(app) {
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, preference with a value of '2'
     db.Product.findAll({
-      preference: 'dislike'
+      preference: 'dislike',
+      include: [db.User]
     })
-    .then(function(dislikedProducts) {
-      res.json(dislikedProducts);
+    .then(function(dbProduct) {
+      res.json(dbProduct);
     });
   });
 
@@ -56,10 +57,11 @@ module.exports = function(app) {
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, preference with a value of 'like'
     db.Product.findAll({
-      preference: 'like'
+      preference: 'like',
+      include: [db.User]
     })
-    .then(function(likedProducts) {
-      res.json(likedProducts);
+    .then(function(dbProduct) {
+      res.json(dbProduct);
     });
   });
 

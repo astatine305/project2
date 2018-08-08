@@ -77,9 +77,9 @@ header {
   position: fixed;
   background-image: url(../assets/images/header_root_art-01.png);
   background-repeat: repeat-x;
-  background-size: auto 125px;
+  background-size: auto 115px;
   z-index: 2;
-  height: 125px;
+  height: 115px;
   top: 0;
   left: 0;
   width: 100%;
@@ -98,8 +98,8 @@ header {
 #headerLeft {
   background: url(../assets/images/header_root1-01.png) no-repeat left bottom;
   background-size: contain;
-  width: 240px;
-  height: 125px;
+  width: 245px;
+  height: 115px;
   flex-grow: 2;
 }
 
@@ -107,7 +107,7 @@ header {
   background: url(../assets/images/header_root2-01.png) no-repeat center top;
   background-size: contain;
   width: 120px;
-  height: 125px;
+  height: 115px;
   flex-grow: 1;
 }
 
@@ -115,7 +115,7 @@ header {
   background: url(../assets/images/header_root3-01.png) no-repeat right center;
   background-size: contain;
   width: 220px;
-  height: 125px;
+  height: 115px;
   flex-grow: 3;
 }
 
@@ -175,8 +175,26 @@ header {
 
 .formdiv {
   float: left;
-  width: 33%;
+  width: 50%;
+  margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.formdivWide {
+  display: block;
+  width: 100%;  
+}
+
+.selectPref {
+  font-size: 16px;
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+}
+
+.select {
+  width: 100px;
+  padding: 10px;
 }
 
 input {
@@ -209,10 +227,6 @@ textarea {
   padding: 5px 0px 0px 0px;
   font-size: 14pt;
   font-weight: bold;
-}
-
-.select {
-  width: 100px;
 }
 
 .btn {
@@ -324,7 +338,7 @@ input[type=radio]:checked + label>img {
   display: flex;
   max-width: 550px;
   width: 100%;
-  height: 130px;
+  height: 118px;
   justify-content: center;
   flex-direction: row;
   align-items: flex-end;
@@ -337,11 +351,11 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 150px;
+  height: 130px;
   background-image: url(../assets/images/footer_root_art-01.png);
   background-repeat: repeat-x;
   background-position: bottom;
-  background-size: auto 150px;
+  background-size: auto 130px;
 }
 
 /* Styling Product Divs */
