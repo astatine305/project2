@@ -18,7 +18,6 @@ body {
 h1 {
   font-size: 24pt;
   color: #1d8649;
-  margin: 0px;
   font-family: 'Open Sans Condensed', sans-serif;
   text-transform: uppercase; 
   margin: 0px 0px 5px 0px;
@@ -38,8 +37,16 @@ h3 {
   letter-spacing: .5px;
 }
 
+h4 {
+  font-size: 17pt;
+  color: #1d8649;
+  font-family: 'Open Sans Condensed', sans-serif; 
+  line-height: 100%;
+  margin: 0px 0px 3px 0px;
+}
+
 p {
-  margin: 3px;
+  margin-bottom: 3px;
   font-size: 12pt;
 }
 
@@ -200,44 +207,6 @@ textarea {
   background-color: #165e34;
 }
 
-.product-panel {
-  margin-bottom: 30px;
-}
-
-.btn4 {
-  background-color: #1d8649;
-  width: 20%;
-  max-width: 50px;
-  padding: 2px;
-  border: 1px solid #186337;
-  border-radius: 5px;
-  font-size: 12pt;
-  color: white;
-  margin: 10px 10px 0px 10px;
-}
-
-.btn4:hover {
-  cursor: pointer;
-  background-color: #165e34;
-}
-
-.btn3 {
-  background-color: rgb(196, 0, 0);
-  width: 20%;
-  max-width: 50px;
-  padding: 2px;
-  border: 1px solid rgb(136, 0, 0);
-  border-radius: 5px;
-  font-size: 12pt;
-  color: white;
-  margin: 10px 10px 0px 10px;
-}
-
-.btn3:hover {
-  cursor: pointer;
-  background-color: rgb(136, 0, 0);
-}
-
 .modal-title {
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
@@ -349,4 +318,71 @@ footer {
   background-repeat: repeat-x;
   background-position: bottom;
   background-size: auto 150px;
+}
+
+/* Styling Product Divs */
+
+.product-panel {
+  width: 100%;
+  padding: 0px 15px 0px 15px;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.product-heading {
+  width: 100%;
+  line-height: 120%;
+  display: block;
+  text-align: left;
+}
+
+.product-body1 {
+  width: 70%;
+  text-align: left;
+}
+
+.product-body3 {
+  width: 30%;
+  text-align: center;
+}
+
+#editIcon {
+  width: 15px;
+  height: 15px;
+}
+
+#deleteIcon {
+  width: 15px;
+  height: 15px;
+}
+
+.btn4 {
+  background-color:white;
+  text-align: center;
+  padding: 2px 5px 5px 5px;
+  width: 30px;
+  margin: 5px 10px 0px 10px;
+  border: 1px solid white;
+  border-radius: 30px;
+}
+
+.btn4:hover {
+  cursor: pointer;
+  border: 1px solid #186337;
+}
+
+.btn3 {
+  background-color:white;
+  text-align: center;
+  padding: 2px 5px 5px 5px;
+  width: 30px;
+  margin: 5px 10px 0px 10px;
+  border: 1px solid white;
+  border-radius: 30px;
+}
+
+.btn3:hover {
+  cursor: pointer;
+  border: 1px solid rgb(190, 0, 0);
 }

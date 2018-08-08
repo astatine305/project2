@@ -2,7 +2,7 @@ $(document).ready(function() {
   // Getting jQuery references to the post body, title, form, and author select
   var descInput = $("#description");
   var nameInput = $("#name");
-  var prefInput = $("#like");
+  var prefInput = $("#dislike");
   var ratingInput = $("#rating");
   var addProductForm = $("#newProduct");
   var userSelect = $("#user");
