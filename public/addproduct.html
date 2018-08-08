@@ -29,16 +29,29 @@
 					<div class="form-group">
 						<label for="name"><p class="formTitle">Product Name:</p></label>
 						<input placeholder="Add product name here" type="text" class="form-control" id="name">
-						<br />
+						
 						<label for="description"><p class="formTitle">Product Description:</p></label>
 						<textarea placeholder="Please add a brief product description" class="form-control" rows="2" id="description"></textarea>
-						<div class="form-group">
-							<label for="category">Select User:</label>
-							<select class="form-control" id="user">
+						<div class ="formdiv">
+							<label for="category"><p class="formTitle2">Select User:</p></label>
+							<br>
+							<select class="form-control2" id="user">
 							</select>
-							
-							<div class="form-group">
+						</div>
+
+						<div class ="formdiv">
+							<p class="formTitle2">Product Rating</p>
+							<select class="select" id="rating" name="rating">
+								<option value="">Please Select</option>
+								<option value="1">1 Star (Not good)</option>
+								<option value="2">2 Stars</option>
+								<option value="3">3 Stars</option>
+								<option value="4">4 Stars</option>
+								<option value="5">5 Stars (Excellent)</option>
+							</select>
+						</div>	
 								<p class="formTitle">Add to Likes or Dislikes?</p>
+								<div class="spaceDiv2">
 								<input type="radio" name="preference" id="like" value="1" class="preference input-hidden" />
 								<label for="like">
 									<img src="assets/images/like_green.svg" alt="Like" />
@@ -48,21 +61,7 @@
 								<label for="dislike">
 									<img src="assets/images/dislike_red.svg" alt="Disike" />
 								</label>
-							</div>
-
-							<div class="form-group">
-								<p class="formTitle">Would you like to rate this product?</p>
-								<select class="select" id="rating" name="rating">
-									<option value="">Please Select</option>
-									<option value="1">1 Star (Not good)</option>
-									<option value="2">2 Stars</option>
-									<option value="3">3 Stars</option>
-									<option value="4">4 Stars</option>
-									<option value="5">5 Stars (Excellent)</option>
-								</select>
-							</div>
-						</div>
-						<br />
+								</div>
 						<button type="submit" class="btn">Submit</button>
 					</div>
 				</form>
