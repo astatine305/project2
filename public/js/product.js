@@ -3,6 +3,13 @@ $(document).ready(function() {
 
   // productContainer holds all of our products
   var productContainer = $(".product-container");
+
+  // likedContainer holds all of our liked products
+  var likedContainer = $("#liked-container");
+
+  // dislikedContainer holds all of our disliked products
+  var dislikedContainer = $("#disliked-container");
+
   var productCategorySelect = $("#category");
   // Click events for the edit and delete buttons
   $(document).on("click", "button.btn3", handleProductDelete);
