@@ -50,9 +50,18 @@ p {
   font-size: 12pt;
 }
 
+label {
+  margin-bottom: 0px;
+}
+
 .spaceDiv {
   width: 100%;
   margin: 10px 0px 0px 0px;
+}
+
+.spaceDiv2 {
+  width: 100%;
+  margin: 10px 0px 15px 0px;
 }
 
 .pageTitle {
@@ -165,10 +174,20 @@ header {
   margin: 0px;
 }
 
+.form-control2 {
+  width: 120px;
+}
+
+.formdiv {
+  float: left;
+  width: 50%;
+  margin-bottom: 20px;
+}
+
 input {
   display: block;
   width: 100%;
-  padding: 10px;
+  padding: 5px;
   color: #7b7b7b;
   font-size: 12pt;
   font-family: 'Open Sans Condensed', sans-serif;
@@ -178,7 +197,7 @@ input {
 textarea {
   display: block;
   width: 100%;
-  padding: 10px;
+  padding: 5px;
   color: #7b7b7b;
   font-size: 12pt;
   font-family: 'Open Sans Condensed', sans-serif;
@@ -191,10 +210,16 @@ textarea {
   font-weight: bold;
 }
 
+.formTitle2 {
+  padding: 5px 0px 0px 0px;
+  font-size: 14pt;
+  font-weight: bold;
+}
+
 .btn {
   background-color: #1d8649;
-  width: 35%;
-  padding: 10px;
+  width: 120px;
+  padding: 5px 10px 5px 10px;
   border: 1px solid #186337;
   border-radius: 5px;
   font-size: 12pt;

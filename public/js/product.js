@@ -3,6 +3,8 @@ $(document).ready(function() {
 
   // productContainer holds all of our products
   var productContainer = $(".product-container");
+  var likedContainer = $("#liked-container");
+  var dislikedContainer = $("#disliked-container");
   var productCategorySelect = $("#category");
   // Click events for the edit and delete buttons
   $(document).on("click", "button.btn3", handleProductDelete);
@@ -38,6 +40,8 @@ $(document).ready(function() {
       }
       else {
         initializeRows();
+        likedRows();
+        dislikedRows();
       }
     });
   }
@@ -71,6 +75,26 @@ $(document).ready(function() {
       productsToAdd.push(createNewRow(products[i]));
     }
     productContainer.prepend(productsToAdd);
+  }
+
+  // InitializeRows appends all of our constructed product HTML inside likedContainer - NEED TO FIX
+  function likedRows() {
+    likedContainer.empty();
+    var productsToAdd = [];
+    for (var i = 0; i < products.length; i++) {
+      productsToAdd.push(createNewRow(products[i]));
+    }
+    likedContainer.prepend(productsToAdd);
+  }
+
+  // InitializeRows appends all of our constructed product HTML inside dislikedContainer - NEED TO FIX
+  function dislikedRows() {
+    dislikedContainer.empty();
+    var productsToAdd = [];
+    for (var i = 0; i < products.length; i++) {
+      productsToAdd.push(createNewRow(products[i]));
+    }
+    dislikedContainer.prepend(productsToAdd);
   }
 
   // This function constructs a products HTML
