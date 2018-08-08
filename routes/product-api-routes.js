@@ -29,6 +29,40 @@ module.exports = function(app) {
     });
   });
 
+  // GET route for getting all of the disliked products ??????
+  app.get("/api/products", function(req, res) {
+    var query = {};
+    if (req.query.user_id) {
+      query.UserId = req.query.user_id;
+    }
+    // Here we add an "include" property to our options in our findAll query
+    // We set the value to an array of the models we want to include in a left outer join
+    // In this case, preference with a value of '2'
+    db.Product.findAll({
+      preference: '2'
+    })
+    .then(function(dislikedProducts) {
+      res.json(dislikedProducts);
+    });
+  });
+
+  // GET route for getting all of the liked products ??????
+  app.get("/api/products", function(req, res) {
+    var query = {};
+    if (req.query.user_id) {
+      query.UserId = req.query.user_id;
+    }
+    // Here we add an "include" property to our options in our findAll query
+    // We set the value to an array of the models we want to include in a left outer join
+    // In this case, preference with a value of '2'
+    db.Product.findAll({
+      preference: 'null'
+    })
+    .then(function(likedProducts) {
+      res.json(likedProducts);
+    });
+  });
+
   // Get route for retrieving a single Product
   app.get("/api/products/:id", function(req, res) {
     // Here we add an "include" property to our options in our findOne query
