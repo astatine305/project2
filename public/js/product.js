@@ -42,6 +42,16 @@ $(document).ready(function() {
     });
   }
 
+  //Trying to write the function for sorting the liked and disliked products
+  /*function dislikedProducts(value) {
+    if (preference(value) === false) {
+      return false;
+    } else {
+    return true;
+  }
+  };*/
+
+
   // This function does an API call to delete products
   function deleteProduct(id) {
     $.ajax({
@@ -66,38 +76,43 @@ $(document).ready(function() {
   // This function constructs a products HTML
   function createNewRow(product) {
     var formattedDate = new Date(product.createdAt);
-    formattedDate = moment(formattedDate).format("MMMM Do YYYY");
+    formattedDate = moment(formattedDate).format("M/D/YYYY");
     var newProductPanel = $("<div>");
     newProductPanel.addClass("product-panel");
     var newProductPanelHeading = $("<div>");
     newProductPanelHeading.addClass("product-heading");
     var deleteBtn = $("<button>");
-    deleteBtn.text("delete");
+    deleteBtn.html("<img id='deleteIcon' src='../assets/images/deleteicon.svg'>");
     deleteBtn.addClass("btn3");
     var editBtn = $("<button>");
-    editBtn.text("edit");
+    editBtn.html("<img id='editIcon' src='../assets/images/editicon.svg'>");
     editBtn.addClass("btn4");
-    var newProductName = $("<h1>");
+    var newProductName = $("<H4>");
     var newProductDate = $("<p>");
     var newProductPref = $("<p>");
     var newProductRating = $("<p>");
-    var newProductPanelBody = $("<div>");
-    newProductPanelBody.addClass("product-body");
     var newProductDesc = $("<p>");
+    var newProductPanelBody1 = $("<span>");
+    var newProductPanelBody3 = $("<span>");
+    newProductPanelBody1.addClass("product-body1");
+    newProductPanelBody3.addClass("product-body3");
     newProductName.text(product.product_name + " ");
-    newProductDesc.text("Description: " + product.product_desc);
-    newProductPref.text("Preference: " + product.preference);
-    newProductRating.text("Rating: " + product.rating + " stars");
-    newProductDate.text("Date added: " + formattedDate);
-    newProductPanelBody.append(newProductDate);
-    newProductPanelBody.append(deleteBtn);
-    newProductPanelBody.append(editBtn);
+    newProductDesc.html("<b>Description: </b>" + product.product_desc);
+    newProductPref.html("<b>Preference: </b>" + product.preference);
+    newProductRating.html("<b>Rating: </b>" + product.rating + " stars");
+    newProductDate.html("<b>Date added: </b>" + formattedDate);
+    
     newProductPanelHeading.append(newProductName);
+    newProductPanelBody1.append(newProductDate);
     newProductPanelHeading.append(newProductDesc);
-    newProductPanelBody.prepend(newProductPref);
-    newProductPanelBody.prepend(newProductRating);
+    newProductPanelHeading.append(newProductPref);
+    newProductPanelBody1.append(newProductRating);
+    newProductPanelBody3.append(deleteBtn);
+    newProductPanelBody3.append(editBtn);
+    
     newProductPanel.append(newProductPanelHeading);
-    newProductPanel.append(newProductPanelBody);
+    newProductPanel.append(newProductPanelBody1);
+    newProductPanel.append(newProductPanelBody3);
     newProductPanel.data("product", product);
     return newProductPanel;
   }
