@@ -15,31 +15,6 @@ body {
   color: #7b7b7b;
 }
 
-.spaceDiv {
-  width: 100%;
-  margin: 10px 0px 0px 0px;
-}
-
-header {
-  position: fixed;
-  z-index: 2;
-  height: 80px;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #1d8649;
-}
-
-.pageTitle {
-  font-size: 24pt;
-  color: #1d8649;
-  margin: 0px;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: bold;
-  text-transform: uppercase; 
-  margin: 0px 0px 5px 0px;
-}
-
 h1 {
   font-size: 24pt;
   color: #1d8649;
@@ -64,8 +39,104 @@ h3 {
 }
 
 p {
-  margin: 1px;
+  margin: 3px;
   font-size: 12pt;
+}
+
+.spaceDiv {
+  width: 100%;
+  margin: 10px 0px 0px 0px;
+}
+
+.pageTitle {
+  font-size: 24pt;
+  color: #1d8649;
+  margin: 0px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase; 
+  margin: 0px 0px 5px 0px;
+}
+
+header {
+  position: fixed;
+  background-image: url(../assets/images/header_root_art-01.png);
+  background-repeat: repeat-x;
+  background-size: auto 125px;
+  z-index: 2;
+  height: 125px;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.headerImg {
+  max-width: 700px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: auto;
+  margin-left: auto; 
+}
+
+#headerLeft {
+  background: url(../assets/images/header_root1-01.png) no-repeat left bottom;
+  background-size: contain;
+  width: 240px;
+  height: 125px;
+  flex-grow: 2;
+}
+
+#headerMiddle {
+  background: url(../assets/images/header_root2-01.png) no-repeat center top;
+  background-size: contain;
+  width: 120px;
+  height: 125px;
+  flex-grow: 1;
+}
+
+#headerRight {
+  background: url(../assets/images/header_root3-01.png) no-repeat right center;
+  background-size: contain;
+  width: 220px;
+  height: 125px;
+  flex-grow: 3;
+}
+
+#mainLogo {
+  width: 275px;
+  margin: 20px auto 20px auto;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 120px auto 130px auto;
+}
+
+.pageContent {
+  padding: 30px 10px 30px 10px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 550px;
+  width: 85%;
+  background-color: white;
+  border: 1px solid rgb(201, 201, 201);
+  text-align: center;
+}
+
+.pageContent a {
+  color: rgb(255, 132, 0);
+  font-size: 14pt;
+  text-decoration: none;
+  padding: 0px 1px 3px 1px;
+  font-weight: bold;
+}
+
+.pageContent a:hover {
+  color: #1bc76e;
+  border-bottom: 2px solid #1bc76e;
 }
 
 .pageLinks a {
@@ -115,11 +186,11 @@ textarea {
 
 .btn {
   background-color: #1d8649;
-  width: 30%;
-  padding: 5px;
+  width: 35%;
+  padding: 10px;
   border: 1px solid #186337;
   border-radius: 5px;
-  font-size: 14pt;
+  font-size: 12pt;
   color: white;
   margin: 0px 10px 15px 10px;
 }
@@ -207,74 +278,12 @@ input[type=radio]:checked + label>img {
   transform: scale(1.25);
 }
 
-.headerImg {
-  max-width: 600px;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#mainLogo {
-  width: 275px;
-  margin: 20px auto 20px auto;
-}
-
-#logoImg {
-  width: 150px;
-  top: 0;
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-  margin: 120px auto 130px auto;
-}
-
-.pageContent {
-  padding: 30px 10px 30px 10px;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 550px;
-  width: 85%;
-  background-color: white;
-  border: 1px solid rgb(201, 201, 201);
-  text-align: center;
-}
-
-#userImage {
-  margin: 10px auto 10px auto;
-  max-width: 300px;
-  width: 100%;
-  height: auto;
-  font-size: 18pt;
-  line-height: 370px;
-  background-color: rgb(201, 201, 201);
-}
-
-.ratingBar {
-  margin-top: 10px;
-  margin-bottom: 20px;
-  height: 40px;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.star {
-  width: 35px;
-  margin: 2px;
-}
-
-.star:hover {
-  cursor: pointer;
-  width: 39px;
-  margin: 0;
-}
-
 .productInfo {
   padding-top: 5px;
   text-align: center;
 }
+
+/*  Footer Styling  */
 
 #dislikeBtn {
   text-align: center;
@@ -302,17 +311,6 @@ input[type=radio]:checked + label>img {
   opacity: 1;
 }
 
-#plusText {
-  width: 100%;
-  margin: auto;
-  top: 15%;
-  left: .5%;
-  position: absolute;
-  z-index: 3;
-  font-size: 12pt;
-  color: white;
-}
-
 #cameraBtn {
   width: 120px;
   height: 120px;
@@ -321,7 +319,7 @@ input[type=radio]:checked + label>img {
   line-height: 97px;
   text-align: center;
   background-color: white;
-  border: 10px solid #1d8649;
+  border: 10px solid #12874a;
 }
 
 #cameraBtn:hover {
@@ -347,8 +345,8 @@ footer {
   bottom: 0;
   width: 100%;
   height: 150px;
-  background-image: url(../assets/images/footer_background-01.png);
-  background-position: bottom;
+  background-image: url(../assets/images/footer_root_art-01.png);
   background-repeat: repeat-x;
-  background-size: contain;
+  background-position: bottom;
+  background-size: auto 150px;
 }
