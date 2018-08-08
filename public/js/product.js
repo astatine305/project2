@@ -47,13 +47,22 @@ $(document).ready(function() {
   }
 
   //Trying to write the function for sorting the liked and disliked products
-  /*function dislikedProducts(value) {
-    if (preference(value) === 2) {
-      return disliked;
-    } else {
-    return liked;
-  }
-  };*/
+  /*function getProducts(disliked) {
+    preference = disliked || "2";
+    if (preference) {
+      preference.val === "2";
+    }
+    $.get("/api/products" + preference, function(data) {
+      console.log("Products", data);
+      products = data;
+      if (!products || !products.length) {
+        displayEmpty(user);
+      }
+      else {
+        dislikedRows();
+      }
+    });
+  }*/
 
 
   // This function does an API call to delete products
@@ -172,6 +181,8 @@ $(document).ready(function() {
     messageH2.html("No products have been added yet" + partial + ".<br>" + "Click <a href='/addproduct" + query +
     "'>here</a> to add a product.");
     productContainer.append(messageH2);
+    likedContainer.append(messageH2);
+    dislikedContainer.append(messageH2);
   }
 
 });
