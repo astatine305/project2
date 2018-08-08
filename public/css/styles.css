@@ -173,13 +173,9 @@ header {
   margin: 0px;
 }
 
-.form-control2 {
-  width: 120px;
-}
-
 .formdiv {
   float: left;
-  width: 50%;
+  width: 33%;
   margin-bottom: 20px;
 }
 
@@ -213,6 +209,10 @@ textarea {
   padding: 5px 0px 0px 0px;
   font-size: 14pt;
   font-weight: bold;
+}
+
+.select {
+  width: 100px;
 }
 
 .btn {

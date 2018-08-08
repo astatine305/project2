@@ -35,8 +35,16 @@
 						<div class ="formdiv">
 							<label for="category"><p class="formTitle2">Select User:</p></label>
 							<br>
-							<select class="form-control2" id="user">
+							<select class="select" id="user">
 							</select>
+						</div>
+
+						<div class ="formdiv">
+							<p class="formTitle2">Like or dislike?</p>
+								<select class="select" id="preference" name="preference">
+									<option value="liked" selected>Like</option>
+									<option value="disliked">Dislike</option>
+								</select>
 						</div>
 
 						<div class ="formdiv">
@@ -50,7 +58,7 @@
 								<option value="5">5 Stars (Excellent)</option>
 							</select>
 						</div>	
-								<p class="formTitle">Add to Likes or Dislikes?</p>
+								<!--<p class="formTitle">Add to Likes or Dislikes?</p>
 								<div class="spaceDiv2">
 								<input type="radio" name="preference" id="like" value="1" class="preference input-hidden" />
 								<label for="like">
@@ -61,8 +69,10 @@
 								<label for="dislike">
 									<img src="assets/images/dislike_red.svg" alt="Disike" />
 								</label>
-								</div>
+								</div>-->
+						<div class="spaceDiv2">
 						<button type="submit" class="btn">Submit</button>
+						</div>
 					</div>
 				</form>
 			</div>

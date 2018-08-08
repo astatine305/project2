@@ -13,8 +13,11 @@ module.exports = function(sequelize, DataTypes) {
       len: [1]
     },
     preference: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
     },
     rating: {
       type: DataTypes.INTEGER,
