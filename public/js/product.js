@@ -56,6 +56,26 @@ $(document).ready(function() {
     productContainer.prepend(productsToAdd);
   }
 
+  // InitializeRows handles appending all of our constructed product HTML on liked.html NEED TO FIX
+  function likedRows() {
+    likedContainer.empty();
+    var productsToAdd = [];
+    for (var i = 0; i < products.length; i++) {
+      productsToAdd.push(createNewRow(products[i]));
+    }
+    likedContainer.prepend(productsToAdd);
+  }
+
+  // InitializeRows handles appending all of our constructed product HTML on disliked.html NEED TO FIX
+  function dislikedRows() {
+    dislikedContainer.empty();
+    var productsToAdd = [];
+    for (var i = 0; i < products.length; i++) {
+      productsToAdd.push(createNewRow(products[i]));
+    }
+    dislikedContainer.prepend(productsToAdd);
+  }
+
 // This function constructs a products HTML
   function createNewRow(product) {
     var formattedDate = new Date(product.createdAt);

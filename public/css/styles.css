@@ -98,7 +98,7 @@ header {
 #headerLeft {
   background: url(../assets/images/header_root1-01.png) no-repeat left bottom;
   background-size: contain;
-  width: 245px;
+  width: 235px;
   height: 115px;
   flex-grow: 2;
 }
