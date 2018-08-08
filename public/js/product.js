@@ -47,25 +47,23 @@ $(document).ready(function() {
   }
 
   //Trying to write the function for sorting the liked and disliked products
-  /*function dislikedProducts(value) {
-    if (preference(value) === false) {
-      return false;
-    } else {
-    return true;
-  }
-  };*/
+  /*function getProducts(liked) {
+    preference = like;
+    if (preference) {
+      preference.val === "like";
+    }
+    $.get("/api/products/liked, function(data) {
+      console.log("Products", data);
+      products = data;
+      if (!products || !products.length) {
+        displayEmpty(user);
+      }
+      else {
+        dislikedRows();
+      }
+    });
+  }*/
 
-
-  // This function does an API call to delete products
-  function deleteProduct(id) {
-    $.ajax({
-      method: "DELETE",
-      url: "/api/products/" + id
-    })
-      .then(function() {
-        getProducts(productCategorySelect.val());
-      });
-  }
 
   // InitializeRows handles appending all of our constructed product HTML inside productContainer
   function initializeRows() {
@@ -116,8 +114,8 @@ $(document).ready(function() {
     var newProductPref = $("<p>");
     var newProductRating = $("<p>");
     var newProductDesc = $("<p>");
-    var newProductPanelBody1 = $("<span>");
-    var newProductPanelBody3 = $("<span>");
+    var newProductPanelBody1 = $("<div>");
+    var newProductPanelBody3 = $("<div>");
     newProductPanelBody1.addClass("product-body1");
     newProductPanelBody3.addClass("product-body3");
     newProductName.text(product.product_name + " ");
@@ -139,6 +137,17 @@ $(document).ready(function() {
     newProductPanel.append(newProductPanelBody3);
     newProductPanel.data("product", product);
     return newProductPanel;
+  }
+
+  // This function does an API call to delete products
+  function deleteProduct(id) {
+    $.ajax({
+      method: "DELETE",
+      url: "/api/products/" + id
+    })
+      .then(function() {
+        getProducts(productCategorySelect.val());
+      });
   }
 
   // This function figures out which product we want to delete and then calls deleteProduct
@@ -172,6 +181,8 @@ $(document).ready(function() {
     messageH2.html("No products have been added yet" + partial + ".<br>" + "Click <a href='/addproduct" + query +
     "'>here</a> to add a product.");
     productContainer.append(messageH2);
+    likedContainer.append(messageH2);
+    dislikedContainer.append(messageH2);
   }
 
 });

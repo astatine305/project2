@@ -47,7 +47,7 @@ h4 {
 
 p {
   margin-bottom: 3px;
-  font-size: 12pt;
+  font-size: 13pt;
 }
 
 label {
@@ -67,11 +67,10 @@ label {
 .pageTitle {
   font-size: 24pt;
   color: #1d8649;
-  margin: 0px;
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
   text-transform: uppercase; 
-  margin: 0px 0px 5px 0px;
+  margin: 0px 0px 0px 0px;
 }
 
 header {
@@ -122,7 +121,7 @@ header {
 
 #mainLogo {
   width: 275px;
-  margin: 20px auto 20px auto;
+  margin: 40px auto 40px auto;
 }
 
 .container {
@@ -174,13 +173,9 @@ header {
   margin: 0px;
 }
 
-.form-control2 {
-  width: 120px;
-}
-
 .formdiv {
   float: left;
-  width: 50%;
+  width: 33%;
   margin-bottom: 20px;
 }
 
@@ -214,6 +209,10 @@ textarea {
   padding: 5px 0px 0px 0px;
   font-size: 14pt;
   font-weight: bold;
+}
+
+.select {
+  width: 100px;
 }
 
 .btn {
@@ -365,6 +364,7 @@ footer {
 .product-body1 {
   width: 70%;
   text-align: left;
+  line-height: 120%;
 }
 
 .product-body3 {

@@ -27,9 +27,19 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/allproducts.html"));
   });
 
+  // liked route loads liked.html 
+  app.get("/liked", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/liked.html"));
+  });
+
+  // disliked route loads liked.html 
+  app.get("/liked", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/disliked.html"));
+  });
+
   // createprofile route loads login.html
   app.get("/createprofile", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/login.html"));
+    res.sendFile(path.join(__dirname, "../public/createprofile.html"));
   });
 
 };
