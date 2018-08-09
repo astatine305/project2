@@ -3,7 +3,7 @@
 }
 
 hr {
-  width: 300px;
+  width: 350px;
 }
 
 body {
@@ -18,7 +18,7 @@ body {
 h1 {
   font-size: 24pt;
   color: #1d8649;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   text-transform: uppercase; 
   margin: 0px 0px 5px 0px;
 }
@@ -26,7 +26,6 @@ h1 {
 h2 {
   margin: 6px 0px 6px 0px;
   font-size: 14pt; 
-  letter-spacing: .5px;
   line-height: 170%;
 }
 
@@ -34,7 +33,6 @@ h3 {
   margin: 6px 0px 1px 0px;
   font-size: 18pt;
   text-transform: uppercase; 
-  letter-spacing: .5px;
 }
 
 h4 {
@@ -54,6 +52,12 @@ label {
   margin-bottom: 0px;
 }
 
+.bigger {
+  margin: 0px;
+  padding: 0px;
+  font-size: 14pt;
+}
+
 .spaceDiv {
   width: 100%;
   margin: 10px 0px 0px 0px;
@@ -67,8 +71,7 @@ label {
 .pageTitle {
   font-size: 24pt;
   color: #1d8649;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: bold;
+  font-family: 'Roboto Condensed', sans-serif;
   text-transform: uppercase; 
   margin: 0px 0px 0px 0px;
 }
@@ -77,9 +80,9 @@ header {
   position: fixed;
   background-image: url(../assets/images/header_root_art-01.png);
   background-repeat: repeat-x;
-  background-size: auto 125px;
+  background-size: auto 113px;
   z-index: 2;
-  height: 125px;
+  height: 115px;
   top: 0;
   left: 0;
   width: 100%;
@@ -98,8 +101,8 @@ header {
 #headerLeft {
   background: url(../assets/images/header_root1-01.png) no-repeat left bottom;
   background-size: contain;
-  width: 240px;
-  height: 125px;
+  width: 235px;
+  height: 115px;
   flex-grow: 2;
 }
 
@@ -107,7 +110,7 @@ header {
   background: url(../assets/images/header_root2-01.png) no-repeat center top;
   background-size: contain;
   width: 120px;
-  height: 125px;
+  height: 115px;
   flex-grow: 1;
 }
 
@@ -115,23 +118,23 @@ header {
   background: url(../assets/images/header_root3-01.png) no-repeat right center;
   background-size: contain;
   width: 220px;
-  height: 125px;
+  height: 115px;
   flex-grow: 3;
 }
 
 #mainLogo {
   width: 275px;
-  margin: 40px auto 40px auto;
+  margin: 25px auto 25px auto;
 }
 
 .container {
   display: flex;
   justify-content: center;
-  margin: 120px auto 130px auto;
+  margin: 100px auto 130px auto;
 }
 
 .pageContent {
-  padding: 30px 10px 30px 10px;
+  padding: 20px;
   margin-left: auto;
   margin-right: auto;
   max-width: 550px;
@@ -143,15 +146,16 @@ header {
 
 .pageContent a {
   color: #1d8649;
-  font-size: 16pt;
+  font-size: 20pt;
+  font-family: 'Roboto Condensed', sans-serif;
   text-decoration: none;
-  padding: 0px 1px 3px 1px;
+  padding: 0px;
   font-weight: bold;
 }
 
 .pageContent a:hover {
-  color: #b8b8b8;
-  border-bottom: 1px solid #b8b8b8;
+  color: #1d8649;
+  text-shadow: 0 0 6px #00b34b;
 }
 
 .pageLinks a {
@@ -166,7 +170,7 @@ header {
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 
 .form-group2 {
@@ -175,15 +179,34 @@ header {
 
 .formdiv {
   float: left;
-  width: 33%;
+  width: 50%;
+  margin-top: 5px;
   margin-bottom: 20px;
+}
+
+.formdivWide {
+  display: block;
+  width: 100%;  
+}
+
+.selectPref {
+  font-size: 16px;
+  padding: 10px;
+  width: 150px;
+  text-align: center;
+}
+
+.select {
+  width: 100px;
+  padding: 10px;
 }
 
 input {
   display: block;
   width: 100%;
+  height: 40px;
   padding: 5px;
-  color: #7b7b7b;
+  color: #686868;
   font-size: 12pt;
   font-family: 'Open Sans Condensed', sans-serif;
   border: 1px solid #b8b8b8;
@@ -211,10 +234,6 @@ textarea {
   font-weight: bold;
 }
 
-.select {
-  width: 100px;
-}
-
 .btn {
   background-color: #1d8649;
   width: 120px;
@@ -229,6 +248,7 @@ textarea {
 .btn:hover {
   cursor: pointer;
   background-color: #165e34;
+  box-shadow: 0 0 6px #00b34b;
 }
 
 .modal-title {
@@ -324,7 +344,7 @@ input[type=radio]:checked + label>img {
   display: flex;
   max-width: 550px;
   width: 100%;
-  height: 130px;
+  height: 118px;
   justify-content: center;
   flex-direction: row;
   align-items: flex-end;
@@ -337,11 +357,11 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 150px;
+  height: 130px;
   background-image: url(../assets/images/footer_root_art-01.png);
   background-repeat: repeat-x;
   background-position: bottom;
-  background-size: auto 150px;
+  background-size: auto 125px;
 }
 
 /* Styling Product Divs */
