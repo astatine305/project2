@@ -8,7 +8,7 @@ This was the second group project for the UCI Full Stack Web Development Boot Ca
 
 Say you're out with friends or trying out a new restaurant. You order an amazing meal and you want to remember what you ordered so you can order it again next time you come. Or maybe you tried a new beverage and want to see  where you can buy it, just not when your in the middle of dinner or busy hanging out with friends. 
 
-With ROOT, you can quicly log the product info along with whether you liked or didn't like it and rate it. When you want to recall the product it's safely stored in your ROOT. Just create an account and log in. Added products are stored on the "likes" and "dislikes" pages which can be accessed from the links at the bottom of any page on the site. Stored products can be viewed, edited and deleted with our easy to use UI.
+With ROOT, you can quickly log the product info along with whether you liked or didn't like it and rate it. When you want to recall the product it's safely stored in your ROOT. Just create an account and log in. Added products are stored on the "likes" and "dislikes" pages which can be accessed from the links at the bottom of any page on the site. Stored products can be viewed, edited and deleted with our easy to use UI.
 
 ## Design Process
 
