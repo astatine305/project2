@@ -1,6 +1,6 @@
 # ROOT | Product Manager
 
-TEAM ROOT: Audrey Feranandez, Ben Clark, Brian Nguyen, and Fletcher Bunales
+TEAM ROOT: Audrey Fernandez, Ben Clark, Brian Nguyen, and Fletcher Bunales
 
 You can check out the deployed app on Heroku [here](https://warm-oasis-23319.herokuapp.com/)!
 
