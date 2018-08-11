@@ -1,5 +1,7 @@
 # ROOT | Product Manager
 
+TEAM ROOT: Audrey Feranandez, Ben Clark, Brian Nguyen, and Fletcher Bunales
+
 You can check out the deployed app on Heroku [here](https://warm-oasis-23319.herokuapp.com/)!
 
 This was the second group project for the UCI Full Stack Web Development Boot Camp. Our tem decided to create a mobile app to collect and store product information and sort it by preference for future reference.
@@ -11,13 +13,9 @@ With root, you can quicly log the product info along with whether you liked or d
 ## Design Process
 
 * Used sketches to develop an easy to use interface for logging product details and saving them to a database
-
 * Designed a logo, theme and graphic elements to convey the idea of ROOT being like a personal product tree
-
 * Front end team began building the wireframe for page layouts while the backend started writing script to execute CRUD with the data
-
 * After running into backend challenges, we had to rethink the way the app received user data so we could start testing the backend
-
 * Merged front end and backend files and ran tests to debug
 
 ## Technologies Used
@@ -49,16 +47,16 @@ With root, you can quicly log the product info along with whether you liked or d
 ## Screenshots
 
 Login Page (Index)
-![Full Size](/screenshots/home.png)
+![Mobile Size](/screenshots/home.png)
 
 Create A Profile
-![Full Size](/screenshots/create.png)
+![Mobile Size](/screenshots/create.png)
 
 Add A Product
-![Full Size](/screenshots/add.png)
+![Mobile Size](/screenshots/add.png)
 
 Product Added Confirmation
-![Full Size](/screenshots/confirm.png)
+![Mobile Size](/screenshots/confirm.png)
 
 Product List View (Liked)
 ![Mobile Size](/screenshots/liked.png)
