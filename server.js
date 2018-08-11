@@ -10,19 +10,16 @@ var LocalStrategy = require("passport-local").Strategy;
 var express = require("express");
 var bodyParser = require("body-parser");
 var bcrypt = require('bcryptjs');
+const db2 = require("./db/db.js");
+var exphbs = require('express-handlebars');
 
 // Init App
 var app = express();
-
-
 var PORT = process.env.PORT || 5000;
 
 // Requiring our models for syncing
 var db = require("./models");
 var connection = require('./db/db');
-
-
-// Sets up the Express app to handle data parsing
 
 // Define Routes
 var index = require('./routes/index');
@@ -30,27 +27,24 @@ var users = require('./routes/users');
 var products = require('./routes/products');
 
 
-// Middleware
+// // Middleware
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(expressValidator());
 
-// Static directory
-app.use(express.static(__dirname + "/public"));
-
-
-var options ={
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME
+var options = {
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME
 };
 
 var sessionStore = new MySQLStore(options);
-// Express Session
-app.use(session({  
-  secret: 'mysecret',
+
+app.use(session({
+  secret: 'myRandomSecret',
   saveUninitialized: false,
   resave: false,
   store: sessionStore,
@@ -61,8 +55,15 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+
+// Static directory
+app.use(express.static(__dirname + "/public"));
+
 // Connect Flash
-app.use(flash());
+// app.use(flash());
+
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
 
 // Routes
 app.use('/', index);
@@ -70,41 +71,29 @@ app.use('/users', users);
 app.use('/products', products);
 
 passport.use(new LocalStrategy({
-  usernameField: 'email',
-  passwordField: 'password',
-  session: true
-}, function (username, password, done) {
-  console.log(username);
-  console.log(password);
+  usernameField: 'email'
+},
+  function (username, password, done) {
+    // console.log(username);
+    // console.log(password);
+    db2.query('SELECT id, password FROM users WHERE email = ?', [username], function(err, results) {
+      if (err) {done(err)};
 
-// connection.query('SELECT password FROM users WHERE email = ?', [username], function(err, results, fields) {
-//     if (err) {done(err)};
-//     if (results.length === 0) {
-//       done(null, false);
-//     }
-//     console.log(results[0].password.toString());
-//     var hash = results[0].password.toString();
-//     bcrypt.compare(password, hash, function(err, response) {
-//       if (response === true) {
-//         return done(null, {email: username});
-//       } else {
-//         return done(null, false);
-//       }
-
-//     });
-
-//     return done(null, 'sefesfe');
-//   })
-
-}));
-
-
-
-// Routes
-// =============================================================
-// require("./routes/html-routes.js")(app);
-// require("./routes/user-api-routes.js")(app);
-// require("./routes/product-api-routes.js")(app);
+      if (results.length === 0) {
+        done(null, false);
+      } else {
+        // console.log(results[0])
+        var hash = results[0].password.toString();
+        bcrypt.compare(password, hash, function(err, response) {
+          if (response === true) {
+            return done(null, {user_id: results[0].id});
+          } else {
+            return done(null, false);
+          }
+        });
+      }
+      }) 
+  }));
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================

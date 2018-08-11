@@ -6,7 +6,7 @@ module.exports = function(sequelize, DataTypes) {
     rating: {type: DataTypes.INTEGER,}});
 
   Product.associate = function(models) {
-    // We're saying that a Product should belong to an User
+    // We're saying that a Product should belong to a User
     // A Product can't be created without an User due to the foreign key constraint
     Product.belongsTo(models.User, {
       foreignKey: {

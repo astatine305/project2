@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS product_db;
+DROP DATABASE IF EXISTS vino_db;
 
-CREATE DATABASE product_db;
+CREATE DATABASE vino_db;

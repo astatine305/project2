@@ -19,6 +19,7 @@
 		<a href="login.html"><div id="headerLeft"></div></a>
 		<div id="headerMiddle"></div>
 		<div id="headerRight"></div>
+		<h1><a href="/logout">Logout</a></h1>
 	</div>
 </header>
 		
@@ -28,16 +29,16 @@
 				<form id="newProduct" method="POST" action="/products/add">
 					<div class="form-group">
 						<label for="name"><p class="formTitle">Product Name:</p></label>
-						<input placeholder="Add product name here" type="text" class="form-control" id="name">
+						<input placeholder="Add product name here" type="text" class="form-control" id="name" name="product_name">
 						
 						<label for="description"><p class="formTitle">Product Description:</p></label>
-						<textarea placeholder="Please add a brief product description" class="form-control" rows="2" id="description"></textarea>
-						<div class ="formdiv">
+						<textarea placeholder="Please add a brief product description" class="form-control" rows="2" id="description" name="product_desc"></textarea>
+						<!-- <div class ="formdiv">
 							<label for="category"><p class="formTitle2">Select User:</p></label>
 							<br>
 							<select class="select" id="user">
 							</select>
-						</div>
+						</div> -->
 
 						<div class ="formdiv">
 							<p class="formTitle2">Like or dislike?</p>
@@ -81,13 +82,13 @@
 	<footer>
 			<div class="footerImgs">
 				<div id="dislikeBtn">
-					<a href="disliked.html"><img src="/assets/images/icons-01.svg" width="50px"></a>
+					<a href="/products/dislikes"><img src="/assets/images/icons-01.svg" width="50px"></a>
 					<br>View Dislikes</div>
 				<div id="cameraBtn">
-					<a href="addproduct.html"><img src="/assets/images/addIcon.svg" width="60%"></a>
+					<a href="/products/add"><img src="/assets/images/addIcon.svg" width="60%"></a>
 				</div>
 				<div id="likeBtn">
-					<a href="liked.html"><img src="/assets/images/icons-03.svg" width="50px"></a>
+					<a href="/products/likes"><img src="/assets/images/icons-03.svg" width="50px"></a>
 					<br>View Likes</div>
 			</div>
 	</footer>

@@ -7,9 +7,9 @@ var passport = require("passport");
 var LocalStrategy = require("passport-local").Strategy;
 
 //Resgister
-router.get('/register', function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/createprofile.html"));
-});
+// router.get('/register', function (req, res) {
+//     res.sendFile(path.join(__dirname, "../public/createprofile.html"));
+// });
 
 //Index
 // router.get('/', function (req, res) {
@@ -17,9 +17,9 @@ router.get('/register', function (req, res) {
 // });
 
 //Login page
-router.get('/login', function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/login.html"));
-});
+// router.get('/login', function (req, res) {
+//     res.sendFile(path.join(__dirname, "../public/login.html"));
+// });
 
 
 // Register user
