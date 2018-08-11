@@ -46,17 +46,22 @@ With root, you can quicly log the product info along with whether you liked or d
 
 ## Screenshots
 
-Login Page (Index)
+### Login Page (Index)
+
 ![Mobile Size](/screenshots/home.png)
 
-Create A Profile
+### Create A Profile
+
 ![Mobile Size](/screenshots/create.png)
 
-Add A Product
+### Add A Product
+
 ![Mobile Size](/screenshots/add.png)
 
-Product Added Confirmation
+### Product Added Confirmation
+
 ![Mobile Size](/screenshots/confirm.png)
 
-Product List View (Liked)
+### Product List View (Liked)
+
 ![Mobile Size](/screenshots/liked.png)
