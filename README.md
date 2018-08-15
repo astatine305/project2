@@ -1,12 +1,12 @@
 # ROOT | Product Manager
 
-TEAM ROOT: Audrey Feranandez, Ben Clark, Brian Nguyen, and Fletcher Bunales
+TEAM ROOT: Audrey Fernandez, Ben Clark, Brian Nguyen, and Fletcher Bunales
 
 You can check out the deployed app on Heroku [here](https://warm-oasis-23319.herokuapp.com/)!
 
 This was the second group project for the UCI Full Stack Web Development Boot Camp. Our team decided to create a mobile app that could be used to collect and store product information and sort it by preference for future reference. We call our app, ROOT.
 
-Say you're out with friends or trying out a new restaurant. You order an amazing meal and you want to remember what you ordered so you can order it again next time you come. Or maybe you tried a new beverage and want to see  where you can buy it, just not when your in the middle of dinner or busy hanging out with friends. 
+Say you're out with friends or trying out a new restaurant. You order an amazing meal and you want to remember what you ordered so you can order it again next time you come. Or maybe you tried a new beverage and want to see  where you can buy it, just not when your in the middle of dinner or busy hanging out with friends.
 
 With ROOT, you can quickly log the product info along with whether you liked or didn't like it and rate it. When you want to recall the product it's safely stored in your ROOT. Just create an account and log in. Added products are stored on the "likes" and "dislikes" pages which can be accessed from the links at the bottom of any page on the site. Stored products can be viewed, edited and deleted with our easy to use UI.
 
@@ -21,6 +21,7 @@ With ROOT, you can quickly log the product info along with whether you liked or 
 ## Technologies Used
 
 (other than the basics: HTML, CSS, jQuery, Node, MySQL, etc…)
+
 * Sequelize
 * Body-Parser
 * Express

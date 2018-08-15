@@ -25,7 +25,7 @@ fs
   });
 
 Object.keys(db).forEach(function(modelName) {
-  if (db[modelName].associate) {
+  if ("associate" in db[modelName]) {
     db[modelName].associate(db);
   }
 });

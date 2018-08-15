@@ -20,8 +20,7 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-//Removed join for user because user is not valid  
-/*  Product.associate = function(models) {
+Product.associate = function(models) {
     // We're saying that a Product should belong to an User
     // A Product can't be created without an User due to the foreign key constraint
     Product.belongsTo(models.User, {
@@ -29,7 +28,7 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false
       }
     });
-  };*/
+  };
 
   return Product;
 };
