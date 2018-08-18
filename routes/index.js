@@ -18,7 +18,8 @@ router.get('/', function (req, res) {
 });
 // Serve login page
 router.get('/login', function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/login.html"));
+    res.render('login');
+    // res.sendFile(path.join(__dirname, "../public/login.html"));
 });
 
 
@@ -38,7 +39,8 @@ router.get('/logout', function (req, res) {
 
 //GET register page
 router.get('/register', function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/createprofile.html"));
+    res.render('createprofile');
+    // res.sendFile(path.join(__dirname, "../public/createprofile.html"));
 });
 
 
@@ -53,16 +55,16 @@ router.post('/register', function (req, res, next) {
             'createdAt': today,
             'updatedAt': today
         }
-
         db2.query('INSERT INTO users SET ?', user, function (error, results, fields) {
             if (error) {
                 console.log(error); // add code to notify user email exists
                 res.redirect('/register');
-            } else {
+            } 
+            else {
                 db2.query('SELECT LAST_INSERT_ID() as user_id', function(error, results, fields) {
-                    if (error) throw error;  
-                    const user_id = results[0]
-                    console.log("my id: " +results[0]);
+                    if (error) throw error; 
+                    const user_id = results[0]; 
+                    console.log(results[0])
                     req.login(user_id, function(err) {
                         res.redirect('/products/add')
                         
@@ -80,28 +82,6 @@ passport.serializeUser(function(user_id, done) {
 passport.deserializeUser(function(user_id, done) {
     done(null, user_id);
 });
-
-
-// //Post register page
-// router.post('/register', function (req, res, next) {
-//     bcrypt.genSalt(10, function (err, salt) {
-//         bcrypt.hash(req.body.password, salt, function (err, hash) {
-//             var newUser = {
-//                 "name": req.body.name,
-//                 "email": req.body.email,
-//                 // "password": hash
-//             }
-//             db.User.create(newUser).then(function (error, dbUser) {
-//                 if (error) {
-//                     res.sendFile(path.join(__dirname, "../public/login.html"));
-//                 } else {
-//                     console.log("Registration Complete.")
-//                 }
-//             })
-//         });
-//     });
-
-// });
 
 
 module.exports = router;

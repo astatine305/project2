@@ -12,23 +12,38 @@ var exphbs = require('express-handlebars');
 
 // GET add product
 router.get('/add', authenticationMiddleware(), function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/addproduct.html"));
+    console.log(req.user);
+    console.log(req.isAuthenticated());
+    res.render('addproduct');
+    // res.sendFile(path.join(__dirname, "../public/addproduct.html"));
 });
 
 
 // GET likes
 router.get('/likes', authenticationMiddleware(), function (req, res) {
     var id = req.user.user_id;
-    var liked = 1;
-    db2.query('SELECT * FROM products WHERE UserId = ' + id + ' AND preference = ' + "'liked'", function (error, results, fields) {
+    var liked = 'liked';
+    db2.query('SELECT * FROM products WHERE UserId = ? AND preference = ?', [id, liked], function (error, results, fields) {
         if (error) {
             console.log(error); // add code to notify user email exists   
-        } else {
+        } 
+        if (results.length !== 0) {
             console.log(results);
-            // res.render('liked', {body: results[0].product_name});
-            res.sendFile(path.join(__dirname, "../public/liked.html"));
-            console.log('Likes display'); 
+            
         }
+        res.render('liked', {products: JSON.stringify(results)});
+
+
+        // else {
+
+            
+        //     // console.log(JSON.stringify(results));
+        //     console.log(results.length);
+        //     // res.send(JSON.stringify(results));
+        //     // res.render('liked', {body: results[0].product_name});
+        //     // res.sendFile(path.join(__dirname, "../public/liked.html"));
+        //     res.render('liked');
+        // }
     });
 });
 
@@ -48,29 +63,10 @@ router.get('/dislikes', authenticationMiddleware(), function (req, res) {
 });
 
 
-
-// POST likes 
-// router.post('/likes', authenticationMiddleware(), function (req, res) {
-//     var id = req.user.user_id
-//     db2.query('SELECT * FROM products WHERE UserId = ?', id, function (error, results, fields) {
-//         if (error) {
-//             console.log(error); // add code to notify user email exists   
-//         } else {
-//             console.log(results);
-//             // res.redirect('/products/likes'); //is there a better way? 
-//             console.log('Likes display'); 
-//         }
-//     });
-
-//     // res.sendFile(path.join(__dirname, "../public/addproduct.html"));
-// });
-
-
-
+//POST add product
 router.post('/add', authenticationMiddleware(), function (req, res, next) {
     var today = Date();
     var id = req.user.user_id
-    console.log(id);
 
     var product = {
         'product_name': req.body.product_name,
@@ -83,32 +79,19 @@ router.post('/add', authenticationMiddleware(), function (req, res, next) {
     }
     db2.query('INSERT INTO products SET ?', product, function (error, results, fields) {
         if (error) {
-            console.log(error); // add code to notify user email exists   
+            console.log(error);
         } else {
-            res.redirect('/products/add'); //is there a better way? 
+            res.redirect('/products/add');
             console.log('Item added'); 
         }
     });
-    console.log(req.user);
     console.log(req.isAuthenticated());
     // res.sendFile(path.join(__dirname, "../public/addproduct.html"));
 });
 
-// GET add product
-router.get('/add', authenticationMiddleware(), function (req, res) {
-    // console.log(req.user);
-    // var id = req.user.user_id
-    // console.log(id);
-    // console.log(req.isAuthenticated());
-    res.sendFile(path.join(__dirname, "../public/addproduct.html"));
-});
-
-
-
 
 function authenticationMiddleware() {
     return (req, res, next) => {
-        console.log("User ID: "+ req.user.user_id);
             if (req.isAuthenticated()) return next();
             res.redirect('/login');
     }
