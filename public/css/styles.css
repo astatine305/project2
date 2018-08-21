@@ -411,3 +411,12 @@ footer {
   cursor: pointer;
   border: 1px solid rgb(190, 0, 0);
 }
+
+.products h2 {
+  font-weight: bolder;
+}
+
+.products {
+  border: 1px black solid;
+  margin: 10px 0px;
+}

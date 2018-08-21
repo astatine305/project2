@@ -3,11 +3,17 @@
     <div class="pageContent">
         <div class="pageTitle">Liked Products</div>
         <hr>
-        <div class="liked-container">
-    Products: {{products}}
-    
-
-  
+        <div class="liked-container"> 
+             {{#each products}}
+            <div class="products"> 
+                <div class="productsDesc">
+                <h2>{{product_name}}</h2>
+                <h6>{{product_desc}} Rating: {{rating}}</h6>
+                </div>
+                <button>Delete</button>
+                <button>Update</button>
+            </div>   
+            {{/each}}
         </div>
     </div>
 </div>

@@ -31,34 +31,25 @@ router.get('/likes', authenticationMiddleware(), function (req, res) {
             console.log(results);
             
         }
-        res.render('liked', {products: JSON.stringify(results)});
-
-
-        // else {
-
-            
-        //     // console.log(JSON.stringify(results));
-        //     console.log(results.length);
-        //     // res.send(JSON.stringify(results));
-        //     // res.render('liked', {body: results[0].product_name});
-        //     // res.sendFile(path.join(__dirname, "../public/liked.html"));
-        //     res.render('liked');
-        // }
+        res.render('liked', {products: results});
     });
 });
+
 
 // GET dislikes
 router.get('/dislikes', authenticationMiddleware(), function (req, res) {
 
     var id = req.user.user_id
-    db2.query('SELECT * FROM products WHERE UserId = ' + id + ' AND preference = ' + "'disliked'", function (error, results, fields) {
+    var disliked = 'disliked';
+    db2.query('SELECT * FROM products WHERE UserId = ? AND preference = ?', [id, disliked], function (error, results, fields) {
         if (error) {
             console.log(error); // add code to notify user email exists   
-        } else {
+        } 
+        if (results.length !== 0) {
             console.log(results);
-            res.sendFile(path.join(__dirname, "../public/liked.html"));
-            console.log('Likes display'); 
+            
         }
+        res.render('disliked', {products: results});
     });
 });
 

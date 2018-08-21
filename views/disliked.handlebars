@@ -2,6 +2,17 @@
 	<div class="pageContent">
 		<div class="pageTitle">Disliked Products</div>
 		<hr>
-		<div class="disliked-container"></div>
+		<div class="disliked-container">
+			{{#each products}}
+		  <div class="products"> 
+                <div class="productsDesc">
+                <h2>{{product_name}}</h2>
+                <h6>{{product_desc}} Rating: {{rating}}</h6>
+                </div>
+                <button>Delete</button>
+                <button>Update</button>
+            </div>
+			{{/each}}
+		</div>
 	</div>
 </div>
