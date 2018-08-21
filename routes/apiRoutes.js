@@ -13,19 +13,7 @@ module.exports = function(app) {
       });
   });
 
-  /* Original Get route for returning products of a specific category
-  app.get("/api/products/preference/:preference", function(req, res) {
-    db.Product.findAll({
-      where: {
-        preference: req.params.preference
-      }
-    })
-      .then(function(dbProduct) {
-        res.json(dbProduct);
-      });
-  });*/
-
-  // GET route for getting all of the liked products
+// GET route for getting all of the liked products
   app.get("/api/products/liked", function(req, res) {
     db.Product.findAll({
       where: {
@@ -37,7 +25,7 @@ module.exports = function(app) {
       });
   });
 
-   // GET route for getting all of the disliked products
+  // GET route for getting all of the disliked products
   app.get("/api/products/disliked", function(req, res) {
     db.Product.findAll({
       where: {
