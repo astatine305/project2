@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "root",
-    "database": "vino_db",
+    "database": "caritas_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

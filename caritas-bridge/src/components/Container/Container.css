@@ -1,0 +1,50 @@
+.containerWrap {
+    height: auto;
+}
+
+.containerRow {
+    margin: auto;
+    width: 100%;
+    max-width: 1080px;
+}
+
+.containerContent {
+    background-color: white;
+    width: 100%;
+    height: auto;
+}
+
+.containerBottom {
+    display: flex;
+    flex-direction: row;
+    align-content: flex-end;
+    background-color: white;
+    padding: 30px;
+}
+
+.aboutUs {
+    width: 60%;
+    padding: 10px 20px 0px 20px;
+    margin-right: 20px;
+}
+
+.caritasLogo {
+    padding: 20px 20px 0px 20px;
+    width: 40%;
+}
+
+.carousel-item {
+    transition: transform 2s ease, opacity .5s ease-out
+}
+
+@media screen and (max-width: 720px){
+
+    .containerRow {
+        flex-direction: column;
+    }  
+    
+    .containerContent {
+        width: 95%;
+    }
+
+}

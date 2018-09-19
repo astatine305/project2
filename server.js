@@ -2,7 +2,6 @@ require("dotenv").config();
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var expressValidator = require("express-validator");
-var flash = require("connect-flash");
 var session = require("express-session");
 var MySQLStore = require("express-mysql-session")(session);
 var passport = require("passport");
@@ -26,9 +25,10 @@ var db = require("./models");
 var connection = require('./db/db');
 
 // Define Routes
-var index = require('./routes/index');
-var users = require('./routes/users');
-var products = require('./routes/products');
+// var index = require('./routes/index');
+var user = require('./routes/user.js');
+var list = require('./routes/mylist.js');
+
 
 
 // // Middleware
@@ -70,9 +70,9 @@ app.use(passport.session());
 
 
 // Routes
-app.use('/', index);
-app.use('/users', users);
-app.use('/products', products);
+// app.use('/', index);
+app.use('/user', user);
+app.use('/mylist', list);
 
 passport.use(new LocalStrategy({
   usernameField: 'email'

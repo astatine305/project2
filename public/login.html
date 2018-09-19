@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>ROOT</title>
+	<title>Caritas-Bridge</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
 	 crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" media="screen" href="/css/styles.css" />
@@ -26,11 +26,11 @@
 		<div class="pageContent">
 
 			<div id="mainLogo">
-				<img src="/assets/images/VineLogo_main.svg" width="100%" alt="Main Logo">
+				<img src="" width="100%" alt="Main Logo">
 			</div>
 
 			<div class="pageTitle">User Login</div>
-			<form id="login-form" method="POST" action="/login">
+			<form id="login-form" method="POST" action="/user/login">
 				<input class="form-control" placeholder="Enter your email" id="login-email" type="email" name="email" />
 				<br>
 				<input class="form-control" placeholder="Enter your password" id="login-password" type="password" name="password" />
@@ -40,8 +40,8 @@
 			</form>
 			<hr>
 
-			<p>New to Vino?</p>
-			<a href="/register">Create a Profile</a>
+			<p>Don't have an account?</p>
+			<a href="/users/register">Create an account</a>
 
 		</div>
 	</div>

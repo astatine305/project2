@@ -1,0 +1,26 @@
+.leftColumn {
+    width: 25%;
+    margin: 5px;
+    color: white;
+    background-color: #00677e;
+}
+
+.leftNav {
+    color: white;
+    padding: 20px;
+    font-size: 14pt;
+    border-bottom: 2px solid #064554;
+}
+
+.leftNav a {
+    color: white;
+    text-decoration: none;
+}
+
+.leftNav:hover {
+    background-color: #064554;
+    cursor: pointer;
+}
+
+
+

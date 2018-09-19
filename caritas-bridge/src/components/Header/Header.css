@@ -1,0 +1,74 @@
+.topWrap {
+    height: auto;
+    background-color: #a7ced7;
+}
+
+#charity {
+    width: 220px;
+    margin: 5px;
+}
+
+.headerRow {
+    display: flex;
+    background-color: #ffffff;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+    max-width: 1080px;
+}
+
+#headerTitle {
+    width: 100%;
+    font-size: 6.3em;
+    line-height: 100%;
+    text-align: center;
+    margin-top: 50px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+#subheadTitle {
+    color: #3c8696;
+    text-align: center;
+    font-size: 3.4em;
+    line-height: 90%;
+    margin-bottom: 20px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.sectionTitle {
+    font-size: 2.5em;
+    line-height: 100%;
+}
+
+.sectionRow {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+
+.btn {
+    margin: 10px;
+    color: white;
+    width: 125px;
+}
+
+#profileBtn {
+    background-color: #832019;
+    border: 1px solid #5b1510;
+}
+
+#profileBtn:hover {
+    background-color: #390d0a;
+}
+
+#loginBtn {
+    background-color: #00677e;
+    border: 1px solid #024655;
+}
+
+#loginBtn:hover {
+    background-color: #01313c;
+}

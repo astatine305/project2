@@ -1,0 +1,12 @@
+.containerWrap {
+    background-color: #00677e;
+    border: 0;
+}
+
+@media screen and (max-width: 720px){
+
+    .containerWrap {
+        height: auto;
+    }    
+
+}

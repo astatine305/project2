@@ -1,0 +1,68 @@
+.logoImg {
+    display: block;
+    width: 325px;
+  }
+
+.navWrap {
+    background-color: white;
+    border-bottom: 4px solid #00677e;
+  }
+
+.navRow {
+    max-width: 1080px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    height: 70px;
+    padding: 12px 20px 5px 20px;
+}
+
+nav {
+    margin: 0;
+    padding: 0px;
+    color: #00677e;
+    padding-bottom: 5px;
+}
+
+.navButton {
+    font-size: .9em;
+    font-weight: 600;
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+    display: inline;    
+}
+
+nav a {
+    color: #00677e;
+}
+
+span {
+    margin: 20px;
+    color: #6ca9b6;
+}
+
+nav a:hover {
+    text-decoration: none;
+    color: #832019;
+}
+
+@media screen and (max-width: 720px){
+
+    .App-logo {
+        width: 90%;
+      }
+
+    .navRow {
+        height: auto;
+        justify-content: center;
+    }
+
+    span {
+        margin-left: 0px;
+        padding-left: 20px;
+        padding-right: 20px;  
+    }
+
+}
